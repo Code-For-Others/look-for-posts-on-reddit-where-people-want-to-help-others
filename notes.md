@@ -37,3 +37,8 @@ Search terms for all of reddit:
 "title:altruistic title:job"
 Another thing that would be nice is to be able to manually enter a search string, and then this script would be able
 to run it and compare the results to posts I have already processed.
+It would also make sense to work backwards in the sense of finding careers that can be massively beneficial, and then
+making sure that posts on reddit by people who can do them are found by this project.
+
+Also the final version of this code should have something like `reddit.subreddit("redditdev+learnpython+botwatch")`
+so can search multiple subreddits at once if they have the same search terms, to reduce number of needed API calls.

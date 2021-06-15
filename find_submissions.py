@@ -3,7 +3,6 @@ from subprocess import call
 
 from datetime import datetime
 
-import yagmail
 import time
 from praw.reddit import Subreddit
 import pprint
@@ -137,7 +136,7 @@ def send_email(m2):
 
     email_title = "Meaningful careers search " + date_and_time
 
-    yagmail.SMTP(email_from).send(email_to, email_title, m2)
+    yag.send(email_to, email_title, m2)
 
 
 def i_have_commented(a_submission):

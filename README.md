@@ -23,18 +23,21 @@ To use this project, install `python3` in your [venv](https://docs.python.org/3/
 
 Create a configuration.py file that will look something like this,
 ```python
+import yagmail
+
 should_send_email = False
 should_print_email = False
 should_print_all_search_results = True
 should_open_in_browser = False
 should_save = False
 max_number_of_links_to_open = 30
-email_from='from@email.com'
 email_to='to@email.com'
+
+yag = yagmail.SMTP('from@email.com', 'password')
 ```
 
 If you want email functionality to work then install `yagmail` with `pip3 install yagmail` (maybe have to run `brew install pip3`).
-Then follow [yagmail README](https://github.com/kootenpv/yagmail) to provide your Gmail password to your keychain so
+Then follow [yagmail README](https://github.com/kootenpv/yagmail) to provide your email password to your keychain so
 the code can use it.
 
 Then just run the program. You can either execute,

@@ -10,13 +10,8 @@ import pprint
 
 from main import create_bot, seconds_to_wait_between_api_calls
 from search_parameters import SearchParameters
+from configuration import *
 
-should_send_email = False
-should_print_email = False
-should_print_all_search_results = False
-should_open_in_browser = True
-should_save = False
-max_number_of_links_to_open = 30
 
 search_terms_a = [
     SearchParameters("altruistic"),

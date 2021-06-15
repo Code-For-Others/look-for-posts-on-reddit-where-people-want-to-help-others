@@ -42,9 +42,6 @@ searches = {
 
 r = create_bot()
 
-cscqSubreddit = r.subreddit('cscareerquestions')
-allOfReddit = r.subreddit('all')
-
 
 def search_subreddit(subreddit_name: str, search_parameters: List[SearchParameters]):
     print("Beginning search of /r/" + subreddit_name)

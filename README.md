@@ -9,6 +9,15 @@ technical skills to help with that, and would help a lot potentially, just need 
 # How to get running
 
 In order to set up the bot for your account you can follow instructions [here](https://github.com/reddit-archive/reddit/wiki/OAuth2-Quick-Start-Example#first-steps).
+You will also need to create a praw.ini file in this directory that looks something like,
+```ini
+[meaningful-cs-bot]
+client_id=
+client_secret=
+password=
+username=
+user_agent=
+```
 
 To use this project, install `python3` in your [venv](https://docs.python.org/3/tutorial/venv.html).
 

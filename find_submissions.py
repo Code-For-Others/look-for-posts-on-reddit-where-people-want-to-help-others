@@ -46,11 +46,6 @@ cscqSubreddit = r.subreddit('cscareerquestions')
 allOfReddit = r.subreddit('all')
 
 
-# newSubmissionsAsSet = set(newSubmissions)
-# with open("already_covered_1.txt", "r") as f:
-#     unseen = set(newSubmissions).difference(set(f.read().splitlines()))
-
-
 def search_subreddit(subreddit_name: str, search_parameters: List[SearchParameters]):
     print("Beginning search of /r/" + subreddit_name)
     search_results = {}
@@ -145,7 +140,7 @@ def send_email(m2):
 
     email_title = "Meaningful careers search " + date_and_time
 
-    yagmail.SMTP('makeswell@gmail.com').send('maxwell.pietsch@gmail.com', email_title, m2)
+    yagmail.SMTP(email_from).send(email_to, email_title, m2)
 
 
 def i_have_commented(a_submission):

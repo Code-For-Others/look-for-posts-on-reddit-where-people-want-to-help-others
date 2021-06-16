@@ -19,23 +19,25 @@ search_terms_a = [
     SearchParameters("title:meaning"),
     SearchParameters("title:idealist"),
     SearchParameters("title:idealistic"),
-    SearchParameters("title:non-profit"),
-    SearchParameters("title:nonprofit"),
     SearchParameters("title:charity")
-];
+]
 
 searches = {
-    # 'all': [
-    #         SearchParameters("title:meaningful title:career"),
-    #         SearchParameters("title:meaningful title:job"),
-    #         SearchParameters("title:altruistic title:career"),
-    #         SearchParameters("title:altruistic title:job"),
-    #     ],
+    'all': [
+            SearchParameters("title:meaningful title:career"),
+            SearchParameters("title:meaningful title:job"),
+            SearchParameters("title:altruist title:career"),
+            SearchParameters("title:altruistic title:career"),
+            SearchParameters("title:altruist title:job"),
+            SearchParameters("title:altruistic title:job"),
+        ],
 
     'careerguidance': search_terms_a,
 
     'cscareerquestions': search_terms_a + [
-        SearchParameters("volunteer")
+        SearchParameters("title:volunteer"),
+        SearchParameters("title:non-profit"),
+        SearchParameters("title:nonprofit"),
     ],
 }
 
@@ -109,15 +111,15 @@ def create_email_message(posts: dict):
                 if submission.likes:
                     likes += 1
             if len(permalinks) > 0:
-                m += "In /r/" + subreddit_name + \
+                m += "\nIn /r/" + subreddit_name + \
                      " query \"" + search_parameters.string + \
                      "\"\n" + \
                      "I liked " + str(round(likes / len(permalinks) * 100)) + "% of " + str(len(permalinks)) + \
                      "\nwww.reddit.com" + "\nwww.reddit.com".join(permalinks) + "\n"
             else:
-                m += "In /r/" + subreddit_name + \
+                m += "\nIn /r/" + subreddit_name + \
                      " query \"" + search_parameters.string + \
-                     "\" found nothing."
+                     "\" found nothing.\n"
     return m
 
 

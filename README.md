@@ -49,3 +49,8 @@ or
 I save posts for my future self to look at, then I hide the posts to filter them out of future results.
 I also upvote posts if I was able to answer in a helpful way so that later I will be able to find out which search
 queries are most effective (the ones that turn up the most upvoted submissions will be most effective).
+
+I have cron run this daily by adding the following using `crontab -e` command,
+```
+0 0 * * * /usr/bin/python3 /home/ubuntu/code/reddit-meaningful-careers-bot/find_submissions.py > /home/ubuntu/logs/find_submissions_logs 2>&1
+```

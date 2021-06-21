@@ -26,10 +26,10 @@ searches = {
     'all': [
             SearchParameters("title:meaningful title:career"),
             SearchParameters("title:meaningful title:job"),
-            SearchParameters("title:altruist title:career"),
             SearchParameters("title:altruistic title:career"),
-            SearchParameters("title:altruist title:job"),
             SearchParameters("title:altruistic title:job"),
+            SearchParameters("title:altruist title:career"),
+            SearchParameters("title:altruist title:job"),
         ],
 
     'careerguidance': search_terms_a,

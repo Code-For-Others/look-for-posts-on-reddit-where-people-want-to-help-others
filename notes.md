@@ -12,6 +12,8 @@ some career-related subreddits:
 /r/HowsYourJob
 /r/Meaningfulcareer
 
+Could also consider searching for "purpose"+"career". I don't think I tried searching for "purpose" yet.
+
 I searched through /r/cscareerquestions for different keywords.
 Some that turned up things:
 "altruistic"

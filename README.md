@@ -8,6 +8,8 @@ technical skills to help with that, and would help a lot potentially, just need 
 
 # How to get running
 
+I can access my EC2 instance using my AWS account and [these instructions](https://docs.google.com/document/d/1VNgxYC3Xxcf0tzRThDEE2TUG6_OtVBFB9tppjFUAmtQ/edit) which has this bot running on it.
+
 In order to set up the bot for your account you can follow instructions [here](https://github.com/reddit-archive/reddit/wiki/OAuth2-Quick-Start-Example#first-steps).
 You will also need to create a praw.ini file in this directory that looks something like,
 ```ini

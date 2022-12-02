@@ -40,7 +40,7 @@ email_to='to@email.com'
 yag = yagmail.SMTP('from@email.com', 'password')
 ```
 
-If you want email functionality to work then install `yagmail` with `pip3 install yagmail` (maybe have to run `brew install pip3`).  
+If you want email functionality to work then install `yagmail` with `pip3 install yagmail[all]` (maybe have to run `brew install pip3`).  
 Then follow [yagmail README](https://github.com/kootenpv/yagmail) to provide your email password to your keychain so  
 the code can use it.
 

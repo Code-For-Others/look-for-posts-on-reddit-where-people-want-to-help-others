@@ -10,11 +10,11 @@ technical skills to help with that, and would help a lot potentially, just need 
 
 I can access my EC2 instance using my AWS account and [these instructions](https://docs.google.com/document/d/1VNgxYC3Xxcf0tzRThDEE2TUG6_OtVBFB9tppjFUAmtQ/edit) which has this bot running on it.
 
-In order to set up the bot for your account you can follow instructions [here](https://github.com/reddit-archive/reddit/wiki/OAuth2-Quick-Start-Example#first-steps).  
+In order to set up the bot for your account you can follow instructions [here](https://github.com/reddit-archive/reddit/wiki/OAuth2-Quick-Start-Example#first-steps).
 
-Might want to install python3 in your [venv](https://docs.python.org/3/tutorial/venv.html).
-If `pip3` isn't available on the command line then install it with `brew install pip3` or `sudo apt install pip3` or something similar.
-Run `pip3 install praw`.
+Might want to install python3 in your [venv](https://docs.python.org/3/tutorial/venv.html).  
+If `pip3` isn't available on the command line then install it with `brew install pip3` or `sudo apt install pip3` or something similar.  
+Run `pip3 install praw`.  
 Create a praw.ini file in this directory that looks something like,
 
 ```ini
@@ -23,7 +23,7 @@ client_id=
 client_secret=
 password=
 username=
-user_agent=
+user_agent='look up careers by /u/Max_Pietsch v1.0'
 ```
 
 Create a configuration.py file that looks like this,

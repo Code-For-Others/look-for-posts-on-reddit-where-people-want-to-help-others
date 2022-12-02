@@ -11,7 +11,11 @@ technical skills to help with that, and would help a lot potentially, just need 
 I can access my EC2 instance using my AWS account and [these instructions](https://docs.google.com/document/d/1VNgxYC3Xxcf0tzRThDEE2TUG6_OtVBFB9tppjFUAmtQ/edit) which has this bot running on it.
 
 In order to set up the bot for your account you can follow instructions [here](https://github.com/reddit-archive/reddit/wiki/OAuth2-Quick-Start-Example#first-steps).  
-You will also need to create a praw.ini file in this directory that looks something like,
+
+Might want to install python3 in your [venv](https://docs.python.org/3/tutorial/venv.html).
+If `pip3` isn't available on the command line then install it with `brew install pip3` or `sudo apt install pip3` or something similar.
+Run `pip3 install praw`.
+Create a praw.ini file in this directory that looks something like,
 
 ```ini
 [meaningful-cs-bot]
@@ -22,9 +26,7 @@ username=
 user_agent=
 ```
 
-To use this project, install `python3` in your [venv](https://docs.python.org/3/tutorial/venv.html).
-
-Create a configuration.py file that will look something like this,
+Create a configuration.py file that looks like this,
 
 ```python
 import yagmail
@@ -40,7 +42,7 @@ email_to='to@email.com'
 yag = yagmail.SMTP('from@email.com', 'password')
 ```
 
-If you want email functionality to work then install `yagmail` with `pip3 install yagmail[all]` (maybe have to run `brew install pip3`).  
+If you want email functionality to work then install `yagmail` with `pip3 install yagmail[all]`.  
 Then follow [yagmail README](https://github.com/kootenpv/yagmail) to provide your email password to your keychain so  
 the code can use it.
 

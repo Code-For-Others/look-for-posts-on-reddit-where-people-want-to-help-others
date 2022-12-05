@@ -42,14 +42,13 @@ email_to='to@email.com'
 yag = yagmail.SMTP('from@email.com', 'password')
 ```
 
-If you want email functionality to work then install `yagmail` with `pip3 install yagmail[all]`.  
-Then follow [yagmail README](https://github.com/kootenpv/yagmail) to provide your email password to your keychain so  
-the code can use it.
+You need to create a new App Password for the `from@email.com` account using [these instructions](https://support.google.com/accounts/answer/185833). It's not too hard. I created an App Password for maxdicksize@gmail.com, i.e. `from@email.com` became `maxdicksize@gmail.com`. You may want to reuse maxdicksize@gmail.com for this purpose. After you create the App Password, you insert it in configuration.py where `password` is now.
+
+If you want email functionality to work then install `yagmail` with `pip3 install yagmail[all]`.
+The [yagmail README](https://github.com/kootenpv/yagmail) may help if you get stuck with emails.
 
 Then just run the program. You can either execute,  
-`python3 find_submissions` to search for all the search terms, and do whatever else `configuration.py` says to do  
-or  
-`python3 unsave` to unsave all the saved submissions on your account
+`python3 email_posts` to search the subreddits for all search parameters at the top of the file and then email them to you.
 
 ## How I use this
 

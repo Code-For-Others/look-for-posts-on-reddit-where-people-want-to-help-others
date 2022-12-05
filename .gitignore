@@ -1,3 +1,4 @@
 praw.ini
 .idea/
 configuration.py
+__pycache__/*

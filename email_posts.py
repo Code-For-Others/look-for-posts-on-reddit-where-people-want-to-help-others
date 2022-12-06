@@ -55,13 +55,9 @@ r = create_bot()
 
 def search_subreddit(subreddit_name: str, search_parameters: SearchParameters):
     subreddit: Subreddit = r.subreddit(subreddit_name)
-    print('\nSearching /r/' + subreddit_name + ' for \'' + search_parameters.string +
+    print('\nSearching /r/' + subreddit_name + ' for \'' + search_parameters.query +
           '\' with limit=' + str(search_parameters.limit) + ' and sort=' + str(search_parameters.sort))
-    if search_parameters.limit is None:
-        submissions_iterable = subreddit.search(search_parameters.string, sort=search_parameters.sort)
-    else:
-        submissions_iterable = subreddit.search(search_parameters.string, limit=search_parameters.limit,
-                                                sort=search_parameters.sort)
+    submissions_iterable = subreddit.search(search_parameters.query, sort=search_parameters.sort)
     submissions = []
     for submission in submissions_iterable:
         # only add submissions that haven't been archived,
@@ -90,7 +86,7 @@ def search(search_parameters_list_by_subreddit):
 def create_email_message(search_results: List[SearchResult]):
     m = ''
     for search_result in search_results:
-        m += '\nIn /r/' + search_result.subreddit_name + ' using search parameters "' + search_result.search_parameters.string + '" found:\n'
+        m += '\nIn /r/' + search_result.subreddit_name + ' using search parameters "' + search_result.search_parameters.query + '" found:\n'
         for submission in search_result.submissions:
             m += 'www.reddit.com' + submission.permalink + '\n'
     return m

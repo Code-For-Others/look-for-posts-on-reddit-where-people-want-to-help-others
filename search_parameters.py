@@ -5,7 +5,6 @@ and a list of corresponding post permalinks as the values.
 
 
 class SearchParameters:
-    def __init__(self, string: str, limit: int = None, sort: str = "new"):
-        self.string = string
-        self.limit = limit
+    def __init__(self, query: str, sort: str = "new"):
+        self.query = query
         self.sort = sort

@@ -57,8 +57,10 @@ I also upvote posts if I was able to answer in a helpful way so that later I wil
 queries are most effective (the ones that turn up the most upvoted submissions will be most effective).
 
 I have cron run this daily by adding the following using `crontab -e` command,
-You have to cd because it loads the praw.ini file which is in that directory.
 
 ```
 * * * * * cd /home/ubuntu/code/reddit-meaningful-careers-bot && /usr/bin/python3 /home/ubuntu/code/reddit-meaningful-careers-bot/email_posts.py > /home/ubuntu/code/reddit-meaningful-careers-bot/output.log 2>&1
 ```
+
+The `cd` command is in the crontab above because the praw.ini file is loaded from the current directory.
+I also had to install postfix when using an EC2 instance in order for the email to work, with `sudo apt install postfix`. I selected the default options when the postfix installer prompted me, and that worked.

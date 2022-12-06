@@ -56,7 +56,7 @@ r = create_bot()
 def search_subreddit(subreddit_name: str, search_parameters: SearchParameters):
     subreddit: Subreddit = r.subreddit(subreddit_name)
     print('\nSearching /r/' + subreddit_name + ' for \'' + search_parameters.query +
-          '\' with limit=' + str(search_parameters.limit) + ' and sort=' + str(search_parameters.sort))
+          '\' with sort=' + str(search_parameters.sort))
     submissions_iterable = subreddit.search(search_parameters.query, sort=search_parameters.sort)
     submissions = []
     for submission in submissions_iterable:

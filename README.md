@@ -59,7 +59,7 @@ queries are most effective (the ones that turn up the most upvoted submissions w
 I have cron run this daily by adding the following using `crontab -e` command,
 
 ```
-* * * * * cd /home/ubuntu/code/reddit-meaningful-careers-bot && /usr/bin/python3 /home/ubuntu/code/reddit-meaningful-careers-bot/email_posts.py > /home/ubuntu/code/reddit-meaningful-careers-bot/output.log 2>&1
+0 0 * * * cd /home/ubuntu/code/reddit-meaningful-careers-bot && /usr/bin/python3 /home/ubuntu/code/reddit-meaningful-careers-bot/email_posts.py > /home/ubuntu/code/reddit-meaningful-careers-bot/output.log 2>&1
 ```
 
 The `cd` command is in the crontab above because the praw.ini file is loaded from the current directory.

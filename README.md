@@ -50,6 +50,10 @@ The [yagmail README](https://github.com/kootenpv/yagmail) may help if you get st
 Then just run the program. You can either execute,  
 `python3 email_posts` to search the subreddits for all search parameters at the top of the file and then email them to you.
 
+### Github authentication
+
+You may want to install `gh` on the command line, and then create a new personal token using `gh auth login`. This allows you to run `git push origin main` to push your commits to the main branch.
+
 ## How I use this
 
 I save posts for my future self to look at, then I hide the posts to filter them out of future results.  

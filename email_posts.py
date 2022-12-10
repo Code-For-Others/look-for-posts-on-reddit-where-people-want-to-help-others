@@ -14,13 +14,10 @@ from configuration import *
 
 
 class SearchResult:
-    def __init__(self, subreddit_name: str, search_parameters: SearchParameters, submission: List[Submission]):
+    def __init__(self, subreddit_name: str, search_parameters: SearchParameters, submissions: List[Submission] = None):
         self.subreddit_name = subreddit_name
         self.search_parameters = search_parameters
-        self.submission = submission
-    def __init__(self, subreddit_name: str, search_parameters: SearchParameters):
-        self.subreddit_name = subreddit_name
-        self.search_parameters = search_parameters
+        self.submissions = submissions
 
 common_search_parameters_list = [
     SearchParameters("altruistic"),
@@ -73,6 +70,13 @@ def search_subreddit(subreddit_name: str, search_parameters: SearchParameters):
 def search(search_parameters_list_by_subreddit):
     search_results = []
 
+    # Add any new submission from /r/Nonprofit_Jobs, unless it's a job ad
+    nonprofit_jobs_submissions = []
+    for submission in r.subreddit('Nonprofit_Jobs').new(limit=20):
+        if not submission.archived and not submission.hidden and not submission.link_flair_text == 'Job advert':
+            nonprofit_jobs_submissions.append(submission)
+    search_results.append(SearchResult('Nonprofit_Jobs', None, nonprofit_jobs_submissions))
+
     for subreddit_name, search_parameters_list in search_parameters_list_by_subreddit.items():
         for search_parameters in search_parameters_list:
             search_result = SearchResult(subreddit_name, search_parameters)
@@ -85,11 +89,16 @@ def search(search_parameters_list_by_subreddit):
 
 def create_email_message(search_results: List[SearchResult]):
     m = ''
+    submissions = []
     for search_result in search_results:
-        m += '\nIn /r/' + search_result.subreddit_name + ' using search parameters "' + search_result.search_parameters.query + '" found:\n'
         for submission in search_result.submissions:
-            m += 'www.reddit.com' + submission.permalink + '\n'
+            submissions.append(submission)
+    # Sort all the submissions, so it's easy for me to comment on the most recent ones. I think a non-trivial part of my impact with my comments is how quickly I comment. The quicker the better.
+    sorted(submissions, key=lambda submisssion: submission.created_utc)
+    for submission in submissions:
+        m += 'www.reddit.com' + submission.permalink + '\n'
     return m
+
 
 
 def create_links_list(posts: dict):
@@ -119,9 +128,8 @@ def i_have_commented(a_submission):
 
 
 if __name__ == "__main__":
-    # 'submissions' refers to what you usually call reddit 'posts'. Praw uses this terminology so I adopted it.
+    # 'submissions' refers to what you usually call reddit 'posts'. Praw uses the term 'submission' so I adopted it.
     search_results = search(search_parameters_list_by_subreddit_name)
-    # TODO mark submissions hidden so they don't come up next during the next search
     email_message = create_email_message(search_results)
     print(email_message)
     send_email(email_message)

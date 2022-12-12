@@ -54,6 +54,9 @@ search_parameters_list_by_subreddit_name = {
             SearchParameters("title:donations"),
             SearchParameters("title:charities"),
         ],
+    'college': [
+            SearchParameters("title:pick title:major"),
+        ]
 }
 
 r = create_bot()
@@ -102,7 +105,7 @@ def create_email_message(search_results: List[SearchResult]):
         for submission in search_result.submissions:
             submissions.append(submission)
     # Sort all the submissions, so it's easy for me to comment on the most recent ones. I think a non-trivial part of my impact with my comments is how quickly I comment. The quicker the better.
-    submissions.sort(key=lambda submission: submission.created_utc)
+    submissions.sort(key=lambda submission: submission.created_utc, reverse=True)
     for submission in submissions:
         m += 'www.reddit.com' + submission.permalink + '\n'
     return m

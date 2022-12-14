@@ -55,7 +55,7 @@ search_parameters_list_by_subreddit_name = {
             SearchParameters("title:charities"),
         ],
     'college': [
-            SearchParameters("title:pick title:major"),
+        SearchParameters("title:pick title:major title:altruistic"),
         ]
 }
 

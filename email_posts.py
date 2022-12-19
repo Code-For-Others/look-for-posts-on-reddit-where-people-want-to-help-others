@@ -37,6 +37,35 @@ search_parameters_list_by_subreddit_name = {
             SearchParameters("title:altruistic title:job"),
             SearchParameters("title:altruist title:career"),
             SearchParameters("title:altruist title:job"),
+            SearchParameters("title:help title:others title:job"),
+            SearchParameters("title:help title:others title:career"),
+            SearchParameters("title:help title:others title:work"),
+            SearchParameters("title:help title:people title:job"),
+            SearchParameters("title:help title:people title:career"),
+            SearchParameters("title:help title:people title:work"),
+
+            SearchParameters("title:animal title:abuse title:career"),
+            SearchParameters("title:animal title:abuse title:job"),
+            SearchParameters("title:animal title:abuse title:work"),
+
+            SearchParameters("title:animal title:rights title:career"),
+            SearchParameters("title:animal title:rights title:job"),
+            SearchParameters("title:animal title:rights title:work"),
+
+            SearchParameters("title:human title:extinction title:career"),
+            SearchParameters("title:human title:extinction title:job"),
+            SearchParameters("title:human title:extinction title:work"),
+
+            SearchParameters("title:humanity title:extinction title:career"),
+            SearchParameters("title:humanity title:extinction title:job"),
+            SearchParameters("title:humanity title:extinction title:work"),
+
+            SearchParameters("title:best title:charity"),
+            SearchParameters("title:trust title:charity"),
+            SearchParameters("title:pick title:charity"),
+            SearchParameters("title:choose title:charity"),
+            SearchParameters("title:effective title:charity"),
+            SearchParameters("title:scam title:charity"),
         ],
 
     'careerguidance': common_search_parameters_list,
@@ -106,8 +135,11 @@ def create_email_message(search_results: List[SearchResult]):
             submissions.append(submission)
     # Sort all the submissions, so it's easy for me to comment on the most recent ones. I think a non-trivial part of my impact with my comments is how quickly I comment. The quicker the better.
     submissions.sort(key=lambda submission: submission.created_utc, reverse=True)
+    permalinks = set()
     for submission in submissions:
-        m += 'www.reddit.com' + submission.permalink + '\n'
+        permalinks.add(submission.permalink)
+    for permalink in permalinks:
+        m += 'www.reddit.com' + permalink + '\n'
     return m
 
 

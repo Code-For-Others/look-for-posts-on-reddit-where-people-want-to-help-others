@@ -29,6 +29,8 @@ common_search_parameters_list = [
     SearchParameters("title:charity")
 ]
 
+# If you include multiple 'title:' terms in a SearchParameters, only one of them actually needs to be in the title for the submission (aka post) to match.
+# For instance if you have SearchParameters("title:meaningful title:career"), then either "meaningful" or "career" needs to be in the title for reddit to return it. The other term can be in the submission body.
 search_parameters_list_by_subreddit_name = {
     'all': [
             SearchParameters("title:meaningful title:career"),
@@ -37,9 +39,9 @@ search_parameters_list_by_subreddit_name = {
             SearchParameters("title:altruistic title:job"),
             SearchParameters("title:altruist title:career"),
             SearchParameters("title:altruist title:job"),
-            SearchParameters("title:help title:others title:job"),
-            SearchParameters("title:help title:others title:career"),
-            SearchParameters("title:help title:others title:work"),
+            SearchParameters('title:"help others" title:job'),
+            SearchParameters('title:"help others" title:career'),
+            SearchParameters('title:"help others" title:work'),
             SearchParameters("title:help title:people title:job"),
             SearchParameters("title:help title:people title:career"),
             SearchParameters("title:help title:people title:work"),
@@ -84,7 +86,7 @@ search_parameters_list_by_subreddit_name = {
             SearchParameters("title:charities"),
         ],
     'college': [
-        SearchParameters("title:pick title:major title:altruistic"),
+        SearchParameters('"pick major" title:altruistic'),
         ]
 }
 
@@ -92,8 +94,10 @@ r = create_bot()
 
 def search_subreddit(subreddit_name: str, search_parameters: SearchParameters):
     subreddit: Subreddit = r.subreddit(subreddit_name)
-    print('\nSearching /r/' + subreddit_name + ' for \'' + search_parameters.query +
-          '\' with sort=' + str(search_parameters.sort))
+    searching = '\nSearching /r/' + subreddit_name + ' for \'' + search_parameters.query + '\' with sort=' + str(search_parameters.sort) + '\n'
+    print(searching)
+    log = searching
+    # 'submissions' refers to what you usually call reddit 'posts'. Praw uses the term 'submission' so I adopted it.
     submissions_iterable = subreddit.search(search_parameters.query, sort=search_parameters.sort)
     submissions = []
     for submission in submissions_iterable:
@@ -104,8 +108,10 @@ def search_subreddit(subreddit_name: str, search_parameters: SearchParameters):
         # and are included in search results.
         if not submission.archived and not submission.hidden:
             submissions.append(submission)
+            # add the permalinks to the log, so we know from which SearchParameter each permalink originated
+            log += submission.permalink + '\n'
 
-    return submissions
+    return (log, submissions)
 
 def search(search_parameters_list_by_subreddit):
     search_results = []
@@ -117,17 +123,19 @@ def search(search_parameters_list_by_subreddit):
             nonprofit_jobs_submissions.append(submission)
     search_results.append(SearchResult('Nonprofit_Jobs', None, nonprofit_jobs_submissions))
 
+    log = ''
     for subreddit_name, search_parameters_list in search_parameters_list_by_subreddit.items():
         for search_parameters in search_parameters_list:
             search_result = SearchResult(subreddit_name, search_parameters)
-            search_result.submissions = search_subreddit(subreddit_name, search_parameters)
+            (l, search_result.submissions) = search_subreddit(subreddit_name, search_parameters)
+            log += l
             search_results.append(search_result)
             time.sleep(seconds_to_wait_between_api_calls)
 
-    return search_results
+    return (log, search_results)
 
 
-def create_email_message(search_results: List[SearchResult]):
+def create_email_message(log, search_results: List[SearchResult]):
     m = ''
     submissions = []
     for search_result in search_results:
@@ -140,6 +148,7 @@ def create_email_message(search_results: List[SearchResult]):
         permalinks.add(submission.permalink)
     for permalink in permalinks:
         m += 'www.reddit.com' + permalink + '\n'
+    m += '\nlogs are:\n' + log
     return m
 
 
@@ -169,12 +178,11 @@ def i_have_commented(a_submission):
 
     return False
 
-
 if __name__ == "__main__":
-    # 'submissions' refers to what you usually call reddit 'posts'. Praw uses the term 'submission' so I adopted it.
-    search_results = search(search_parameters_list_by_subreddit_name)
-    email_message = create_email_message(search_results)
-    print(email_message)
-    send_email(email_message)
-
+    with open('log_from_email_posts.txt', encoding='utf-8', mode='w') as f:
+        # log contains useful debugging info
+        (log, search_results) = search(search_parameters_list_by_subreddit_name)
+        email_message = create_email_message(log, search_results)
+        f.write(log)
+        send_email(email_message)
 

@@ -4,3 +4,4 @@ configuration.py
 __pycache__/*
 output.log
 log_from_email_posts.txt
+metrics/

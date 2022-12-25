@@ -40,12 +40,14 @@ search_parameters_list_by_subreddit_name = {
             SearchParameters("title:altruistic title:job"),
             SearchParameters("title:altruist title:career"),
             SearchParameters("title:altruist title:job"),
-            SearchParameters('title:"help others" title:job'),
-            SearchParameters('title:"help others" title:career'),
-            SearchParameters('title:"help others" title:work'),
-            SearchParameters('"help people" title:job'),
-            SearchParameters('"help people" title:career'),
-            SearchParameters('"help people" title:work'),
+
+            # not getting great results for "help people" search (see 12/25/22 metrics) so excluding it for now
+            #SearchParameters('title:"help others" title:job'),
+            #SearchParameters('title:"help others" title:career'),
+            #SearchParameters('title:"help others" title:work'),
+            #SearchParameters('"help people" title:job'),
+            #SearchParameters('"help people" title:career'),
+            #SearchParameters('"help people" title:work'),
 
             # For some reason, reddit doesn't really do searches for 3 words the way you'd expect, so I usually just put two of the words in quotes, like below.
             SearchParameters('"animal abuse" title:career'),

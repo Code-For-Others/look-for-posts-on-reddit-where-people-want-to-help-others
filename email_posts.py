@@ -85,7 +85,12 @@ search_parameters_list_by_subreddit_name = {
         ],
     'college': [
         SearchParameters('"pick major" title:altruistic'),
-        ]
+        ],
+    'vegan': [
+            SearchParameters('title:career'),
+            SearchParameters('title:job'),
+            SearchParameters('title:profession'),
+            ]
 }
 
 r = create_bot()

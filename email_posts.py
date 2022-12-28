@@ -90,6 +90,7 @@ search_parameters_list_by_subreddit_name = {
             SearchParameters('title:career'),
             SearchParameters('title:job'),
             SearchParameters('title:profession'),
+            SearchParameters('title:charity'),
             ]
 }
 

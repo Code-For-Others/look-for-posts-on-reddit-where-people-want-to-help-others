@@ -3,6 +3,7 @@ from subprocess import call
 
 from datetime import datetime
 
+import praw
 import time
 from datetime import datetime
 from praw.reddit import Subreddit
@@ -10,10 +11,7 @@ from praw.reddit import Submission
 import pprint
 import os
 
-from main import create_bot, seconds_to_wait_between_api_calls
 from search_parameters import SearchParameters
-from configuration import *
-
 
 class SearchResult:
     def __init__(self, subreddit_name: str, search_parameters: SearchParameters, submissions: List[Submission] = None):
@@ -85,6 +83,8 @@ search_parameters_list_by_subreddit_name = {
             SearchParameters("title:choose title:charity"),
             SearchParameters("title:effective title:charity"),
             SearchParameters("title:scam title:charity"),
+            SearchParameters("charity suggestions"),
+            SearchParameters("charity recommendations"),
 
             SearchParameters("title:donate title:money"),
         ],
@@ -117,13 +117,20 @@ search_parameters_list_by_subreddit_name = {
     'careerguidance': career_subreddit_search_parameters_list,
 }
 
+# according to https://github.com/reddit-archive/reddit/wiki/API we shouldn't call the API more than 60 times a minute
+# so waiting 1.1 seconds between API calls should be safe
+seconds_to_wait_between_api_calls = 1.1
+
+def create_bot():
+    return praw.Reddit('meaningful-cs-bot')
+
 r = create_bot()
 
 def search_subreddit(metrics_file, subreddit_name: str, search_parameters: SearchParameters):
     subreddit: Subreddit = r.subreddit(subreddit_name)
-    searching = '\nSearching /r/' + subreddit_name + ' for \'' + search_parameters.query + '\' with sort=' + str(search_parameters.sort) + '\n'
+    searching = 'Searching /r/' + subreddit_name + ' for \'' + search_parameters.query + '\' with sort=' + str(search_parameters.sort)
     print(searching)
-    log = searching
+    log = searching + '\n'
     # 'submissions' refers to what you usually call reddit 'posts'. Praw uses the term 'submission' so I adopted it.
     submissions_iterable = subreddit.search(search_parameters.query, sort=search_parameters.sort)
     submissions = []
@@ -178,17 +185,20 @@ def search(metrics_file, search_parameters_list_by_subreddit):
 
     return (log, search_results)
 
-
-def create_email_message(log, search_results: List[SearchResult]):
+# This function will create a string which contains a list of the permalinks in search_results
+def create_permalinks_string(log, search_results: List[SearchResult]):
     m = ''
     submissions = []
     for search_result in search_results:
         for submission in search_result.submissions:
-            # only add them once so the final list doesn't contain duplicates
+            contains_exclusion = False
+            for exclusion in exclusions_list:
+                if exclusion in submission.permalink:
+                    contains_exclusion = True
+            # If submission is already in submissions, then don't add it again, so we don't have any duplicates.
             if submission not in submissions:
-                for exclusion in exclusions_list:
-                    if exclusion not in submission.permalink:
-                        submissions.append(submission)
+                if not contains_exclusion:
+                    submissions.append(submission)
     # Sort all the submissions, so it's easy for me to comment on the most recent ones. I think a non-trivial part of my impact with my comments is how quickly I comment. The quicker the better.
     submissions.sort(key=lambda submission: submission.created_utc, reverse=True)
     for submission in submissions:
@@ -206,16 +216,6 @@ def create_links_list(posts: dict):
                 links.append("www.reddit.com" + submission.permalink)
     return links
 
-
-def send_email(message):
-    # mm/dd/YY H:M:S
-    date_and_time = datetime.now().strftime("%m/%d/%Y %H:%M:%S")
-
-    email_title = "Meaningful careers search " + date_and_time
-
-    yag.send(email_to, email_title, message)
-
-
 def i_have_commented(a_submission):
     for comment in a_submission.comments.list():
         if comment.author == r.config.username:
@@ -224,17 +224,18 @@ def i_have_commented(a_submission):
     return False
 
 if __name__ == "__main__":
+    start_time = time.time()
     metrics_filename = 'metrics_' + datetime.today().strftime('%Y-%m-%d_%H:%M:%S')
     with open('/home/ubuntu/code/personal-website/altruism.txt', mode='w') as personal_website_file:
         with open('./metrics/' + metrics_filename, mode='w') as metrics_file:
             with open('log_from_email_posts.txt', encoding='utf-8', mode='w') as f:
                 # log contains useful debugging info
                 (log, search_results) = search(metrics_file, search_parameters_list_by_subreddit_name)
-                email_message = create_email_message(log, search_results)
+                permalinks = create_permalinks_string(log, search_results)
                 f.write(log)
-                send_email(email_message)
-                personal_website_file.write(email_message)
+                personal_website_file.write(permalinks)
                 # the line below will commit the changes made to personal_website_file to git and push them, which will cause them to show up at http://maximumpeaches.com/altruism.txt
                 # btw, the reason there's a ; after the commit step is because if there's nothing to commit then it would end. this can happen if the altruism file hasn't changed.
                 os.system('cd /home/ubuntu/code/personal-website && git add . && git commit -m "automatically committing"; git push origin main')
-    print('wrote metrics to ./metrics/' + metrics_filename)
+    print('Writing metrics to ./metrics/' + metrics_filename)
+    print(os.path.basename(__file__) + " completed in %.2f seconds." % (time.time() - start_time))

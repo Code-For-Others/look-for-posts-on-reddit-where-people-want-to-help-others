@@ -2,6 +2,6 @@ praw.ini
 .idea/
 configuration.py
 __pycache__/*
-output.log
 log_from_email_posts.txt
 metrics/
+output_from_update_altruism_webpage_cron_job.log

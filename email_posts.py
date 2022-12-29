@@ -30,6 +30,19 @@ common_search_parameters_list = [
     SearchParameters("title:charity")
 ]
 
+career_subreddit_search_parameters_list = [
+    SearchParameters('"help others"'),
+    SearchParameters('"help people"'),
+    SearchParameters('altruistic'),
+
+    # some posts do just say 'social impact', but a lot of misses when you search for this phrase too, it seems
+    # also search parameters like "doctor", "medical school", "software engineer", etc. all turn up at least some relevant posts, but
+    # the hit / miss ratio might keep you from working on other stuff b/c you have to sort through all the junk to find them.
+    #SearchParameters('"social impact"')
+
+    SearchParameters('"help animals"')
+]
+
 # If you include multiple 'title:' terms in a SearchParameters, only one of them actually needs to be in the title for the submission (aka post) to match.
 # For instance if you have SearchParameters("title:meaningful title:career"), then either "meaningful" or "career" needs to be in the title for reddit to return it. The other term can be in the submission body.
 search_parameters_list_by_subreddit_name = {
@@ -91,7 +104,9 @@ search_parameters_list_by_subreddit_name = {
             SearchParameters('title:job'),
             SearchParameters('title:profession'),
             SearchParameters('title:charity'),
-            ]
+            ],
+    'findapath': career_subreddit_search_parameters_list,
+    'careerguidance': career_subreddit_search_parameters_list,
 }
 
 r = create_bot()

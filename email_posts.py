@@ -8,6 +8,7 @@ from datetime import datetime
 from praw.reddit import Subreddit
 from praw.reddit import Submission
 import pprint
+import os
 
 from main import create_bot, seconds_to_wait_between_api_calls
 from search_parameters import SearchParameters
@@ -19,6 +20,13 @@ class SearchResult:
         self.subreddit_name = subreddit_name
         self.search_parameters = search_parameters
         self.submissions = submissions
+
+# the exclusions_list contains strings that aren't allowed in the permalink of posts
+# for instance /r/COMMCoin contains a bunch of junk I don't want to respond to, so I filter it out.
+exclusions_list = [
+        'r/COMMCoin',
+        'u_ayaankKhan562',
+]
 
 common_search_parameters_list = [
     SearchParameters("altruistic"),
@@ -54,7 +62,7 @@ search_parameters_list_by_subreddit_name = {
             SearchParameters("title:altruist title:career"),
             SearchParameters("title:altruist title:job"),
 
-            # not getting great results for "help people" search (see 12/25/22 metrics) so excluding it for now
+            # a lot of misses for the searches below on /r/all (see 12/25/22 metrics), and I have /r/careerguidance and /r/findapath searches for these terms already, so excluding it for now
             #SearchParameters('title:"help others" title:job'),
             #SearchParameters('title:"help others" title:career'),
             #SearchParameters('title:"help others" title:work'),
@@ -178,13 +186,14 @@ def create_email_message(log, search_results: List[SearchResult]):
         for submission in search_result.submissions:
             # only add them once so the final list doesn't contain duplicates
             if submission not in submissions:
-                submissions.append(submission)
+                for exclusion in exclusions_list:
+                    if exclusion not in submission.permalink:
+                        submissions.append(submission)
     # Sort all the submissions, so it's easy for me to comment on the most recent ones. I think a non-trivial part of my impact with my comments is how quickly I comment. The quicker the better.
     submissions.sort(key=lambda submission: submission.created_utc, reverse=True)
     for submission in submissions:
-        print('adding ' + submission.permalink + ' created ' + str(submission.created_utc))
+        #print('adding ' + submission.permalink + ' created ' + str(submission.created_utc))
         m += 'www.reddit.com' + submission.permalink + '\n'
-    m += '\nlogs are:\n' + log
     return m
 
 
@@ -216,11 +225,16 @@ def i_have_commented(a_submission):
 
 if __name__ == "__main__":
     metrics_filename = 'metrics_' + datetime.today().strftime('%Y-%m-%d_%H:%M:%S')
-    with open('./metrics/' + metrics_filename, mode='w') as metrics_file:
-        with open('log_from_email_posts.txt', encoding='utf-8', mode='w') as f:
-            # log contains useful debugging info
-            (log, search_results) = search(metrics_file, search_parameters_list_by_subreddit_name)
-            email_message = create_email_message(log, search_results)
-            f.write(log)
-            send_email(email_message)
+    with open('/home/ubuntu/code/personal-website/altruism.txt', mode='w') as personal_website_file:
+        with open('./metrics/' + metrics_filename, mode='w') as metrics_file:
+            with open('log_from_email_posts.txt', encoding='utf-8', mode='w') as f:
+                # log contains useful debugging info
+                (log, search_results) = search(metrics_file, search_parameters_list_by_subreddit_name)
+                email_message = create_email_message(log, search_results)
+                f.write(log)
+                send_email(email_message)
+                personal_website_file.write(email_message)
+                # the line below will commit the changes made to personal_website_file to git and push them, which will cause them to show up at http://maximumpeaches.com/altruism.txt
+                # btw, the reason there's a ; after the commit step is because if there's nothing to commit then it would end. this can happen if the altruism file hasn't changed.
+                os.system('cd /home/ubuntu/code/personal-website && git add . && git commit -m "automatically committing"; git push origin main')
     print('wrote metrics to ./metrics/' + metrics_filename)

@@ -24,6 +24,7 @@ class SearchResult:
 exclusions_list = [
         'r/COMMCoin',
         'u_ayaankKhan562',
+        '/r/chanceme',
 ]
 
 common_search_parameters_list = [

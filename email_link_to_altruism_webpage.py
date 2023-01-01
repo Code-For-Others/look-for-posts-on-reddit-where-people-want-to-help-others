@@ -11,5 +11,5 @@ def send_email(message):
     yag.send(email_to, email_title, message)
 
 if __name__ == "__main__":
-    send_email('New meaningful careers / best charities results available at:\nhttp://maximumpeaches.com/altruism.txt')
+    send_email('New meaningful careers / best charities results available at:\nhttp://maximumpeaches.com/altruism.html')
 

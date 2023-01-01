@@ -204,7 +204,7 @@ def create_permalinks_string(log, search_results: List[SearchResult]):
     submissions.sort(key=lambda submission: submission.created_utc, reverse=True)
     for submission in submissions:
         #print('adding ' + submission.permalink + ' created ' + str(submission.created_utc))
-        m += 'www.reddit.com' + submission.permalink + '\n'
+        m += '"https://www.reddit.com' + submission.permalink + '",\n'
     return m
 
 
@@ -224,17 +224,29 @@ def i_have_commented(a_submission):
 
     return False
 
+pre = """let i = 0;
+function openNextLinks() {
+    const stepSize = 5;
+    const urls = ["""
+post = """];
+    for (let temp = i; i < urls.length && i < temp + stepSize; i++) {
+        // the "window" + i.toString() part is a trick to open multiple tabs at once on Chrome. See https://stackoverflow.com/questions/24364117/open-multiple-links-in-chrome-at-once-as-new-tabs
+        window.open(urls[i], "window" + i.toString());
+    }
+}"""
+
+
 if __name__ == "__main__":
     start_time = time.time()
     metrics_filename = 'metrics_' + datetime.today().strftime('%Y-%m-%d_%H:%M:%S')
-    with open('/home/ubuntu/code/personal-website/altruism.txt', mode='w') as personal_website_file:
+    with open('/home/ubuntu/code/personal-website/urls.js', mode='w') as personal_website_file:
         with open('./metrics/' + metrics_filename, mode='w') as metrics_file:
             with open('log_from_email_posts.txt', encoding='utf-8', mode='w') as f:
                 # log contains useful debugging info
                 (log, search_results) = search(metrics_file, search_parameters_list_by_subreddit_name)
                 permalinks = create_permalinks_string(log, search_results)
                 f.write(log)
-                personal_website_file.write(permalinks)
+                personal_website_file.write(pre + permalinks + post)
                 # the line below will commit the changes made to personal_website_file to git and push them, which will cause them to show up at http://maximumpeaches.com/altruism.txt
                 # btw, the reason there's a ; after the commit step is because if there's nothing to commit then it would end. this can happen if the altruism file hasn't changed.
                 os.system('cd /home/ubuntu/code/personal-website && git add . && git commit -m "automatically committing"; git push origin main')

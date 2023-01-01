@@ -1,10 +1,10 @@
 # Purpose of this project
 
-This is a personal project to find posts on Reddit that are from people seeking advice on finding a meaningful career.
+This is a personal project to find posts on Reddit that are from people seeking advice on finding a meaningful career or more effective charity.
 
-A lot of this is really rough draft stuff since I'm just using it mostly for myself. If you want to help with this  
-project you can help me figure out better ways to advise people on how to have a meaningful career. It doesn't take  
-technical skills to help with that, and would help a lot potentially, just need to research.
+A lot of this is really rough draft stuff since I'm just using it mostly for myself.
+
+If you're interested in reaching out to people on reddit about how they can be more impactful or live more meaningful lives (maybe you're really into pandemic prevention, for instance, and want to scan reddit for posts about pandemic prevention to share info with others) then please reach out to me at maxwell.pietsch@gmail.com and I can set this reddit bot up to send you new posts or you can help me to figure out better ways to answer posts myself.
 
 # How to get running
 
@@ -39,12 +39,12 @@ should_save = False
 max_number_of_links_to_open = 30
 email_to='to@email.com'
 
-yag = yagmail.SMTP('from@email.com', 'password')
+yag = yagmail.SMTP('from@email.com', 'app password')
 ```
 
-You need to create a new App Password for the `from@email.com` account using [these instructions](https://support.google.com/accounts/answer/185833). It's not too hard. I created an App Password for maxdicksize@gmail.com, i.e. `from@email.com` became `maxdicksize@gmail.com`. You may want to reuse maxdicksize@gmail.com for this purpose. After you create the App Password, you insert it in configuration.py where `password` is now.
+(If I'm the one setting this up then I can just reuse maximumpeaches@gmail.com without setting up a new account.) You need to create a new App Password for the `from@email.com` account using [these instructions](https://support.google.com/accounts/answer/185833). It's not too hard. I created an App Password for maximumpeaches@gmail.com, i.e. `from@email.com` became `maximumpeaches@gmail.com`. After you create the App Password, you insert it (without spaces) in configuration.py where `app password` is now. It's best to use an account for `from@email.com` which doesn't have too much power in case the app password is compromised.
 
-If you want email functionality to work then install `yagmail` with `pip3 install yagmail[all]`.
+If you want email functionality to work then install `yagmail` with `pip3 install yagmail[all]`.  
 The [yagmail README](https://github.com/kootenpv/yagmail) may help if you get stuck with emails.
 
 Then just run the program. You can either execute,  
@@ -66,5 +66,5 @@ I have cron run this daily by adding the following using `crontab -e` command,
 0 0 * * * cd /home/ubuntu/code/reddit-meaningful-careers-bot && /usr/bin/python3 /home/ubuntu/code/reddit-meaningful-careers-bot/email_posts.py > /home/ubuntu/code/reddit-meaningful-careers-bot/output.log 2>&1
 ```
 
-The `cd` command is in the crontab above because the praw.ini file is loaded from the current directory.
+The `cd` command is in the crontab above because the praw.ini file is loaded from the current directory.  
 I also had to install postfix when using an EC2 instance in order for the email to work, with `sudo apt install postfix`. I selected the default options when the postfix installer prompted me, and that worked.

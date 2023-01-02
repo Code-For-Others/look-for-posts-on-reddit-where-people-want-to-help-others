@@ -54,6 +54,7 @@ career_subreddit_search_parameters_list = [
 # For instance if you have SearchParameters("title:meaningful title:career"), then either "meaningful" or "career" needs to be in the title for reddit to return it. The other term can be in the submission body.
 search_parameters_list_by_subreddit_name = {
     'all': [
+            SearchParameters('"charity navigators"'),
             SearchParameters("title:meaningful title:career"),
             SearchParameters("title:meaningful title:job"),
             SearchParameters("title:altruistic title:career"),

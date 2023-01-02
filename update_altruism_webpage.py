@@ -240,7 +240,7 @@ post = """];
 
 if __name__ == "__main__":
     start_time = time.time()
-    metrics_filename = 'metrics_' + datetime.today().strftime('%Y-%m-%d_%H:%M:%S')
+    metrics_filename = 'metrics_' + datetime.today().strftime('%Y-%m-%d')
     with open('/home/ubuntu/code/personal-website/urls.js', mode='w') as personal_website_file:
         with open('./metrics/' + metrics_filename, mode='w') as metrics_file:
             with open('log_from_email_posts.txt', encoding='utf-8', mode='w') as f:

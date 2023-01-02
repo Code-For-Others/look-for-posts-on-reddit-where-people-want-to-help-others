@@ -25,6 +25,7 @@ exclusions_list = [
         'r/COMMCoin',
         'u_ayaankKhan562',
         '/r/chanceme',
+        'r/redditserials',
 ]
 
 common_search_parameters_list = [

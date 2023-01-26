@@ -48,7 +48,11 @@ career_subreddit_search_parameters_list = [
     # the hit / miss ratio might keep you from working on other stuff b/c you have to sort through all the junk to find them.
     #SearchParameters('"social impact"')
 
-    SearchParameters('"help animals"')
+    SearchParameters('"help animals"'),
+    SearchParameters('"make a difference"'),
+    SearchParameters('"have an impact"'),
+    SearchParameters('"ai safety"'),
+    SearchParameters('"machine learning"'),
 ]
 
 # If you include multiple 'title:' terms in a SearchParameters, only one of them actually needs to be in the title for the submission (aka post) to match.
@@ -129,6 +133,8 @@ def create_bot():
 
 r = create_bot()
 
+SECONDS_IN_A_MONTH = 2628000.0
+
 def search_subreddit(metrics_file, subreddit_name: str, search_parameters: SearchParameters):
     subreddit: Subreddit = r.subreddit(subreddit_name)
     searching = 'Searching /r/' + subreddit_name + ' for \'' + search_parameters.query + '\' with sort=' + str(search_parameters.sort)
@@ -140,6 +146,12 @@ def search_subreddit(metrics_file, subreddit_name: str, search_parameters: Searc
     hidden_count = 0
     upvoted_count = 0
     for submission in submissions_iterable:
+
+        # Sometimes I hide a submission in my Saved list, but don't unsave it. I could iterate through my Saved list and find all that are hidden and hide them. A quicker fix for now is to unsave them here.
+        if submission.saved and submission.hidden:
+            submission.unsave()
+            time.sleep(seconds_to_wait_between_api_calls)
+        
         # only add submissions that haven't been archived,
         # because if they are archived can no longer comment on them anyways.
         # also filtering out posts that are hidden. This way I can hide posts I have already processed
@@ -148,6 +160,12 @@ def search_subreddit(metrics_file, subreddit_name: str, search_parameters: Searc
         # if submission.likes == None then I haven't upvoted or downvoted them yet. I'm using upvoting as a way to signal that
         # the submission is the kind of submission I'm looking for.
         if not submission.archived and not submission.hidden and submission.likes == None:
+
+            # if the submission is older than a certain time period, I'm not saving it. The reason for this behavior is that my Saved list on Reddit can't be sorted by date, and commenting on old submissions is less effective than commenting on new ones.
+            if submission.created_utc > time.time() - SECONDS_IN_A_MONTH and not submission.saved:
+                submission.save(category='ea')
+                time.sleep(seconds_to_wait_between_api_calls)
+
             submissions.append(submission)
             # add the permalinks to the log, so we know from which SearchParameter each permalink originated
             log += submission.permalink + '\n'

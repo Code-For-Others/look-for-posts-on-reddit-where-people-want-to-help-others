@@ -45,7 +45,7 @@ def print_my_hits():
         if item.likes == True:
             hit = Hit(item.permalink, [])
             d['hits'].append(hit)
-        elif item.likes == False:
+        else:
             miss = Miss(item.permalink, [])
             d['misses'].append(miss)
     print(json.dumps(d, default=vars, indent=4))

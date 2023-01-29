@@ -124,10 +124,6 @@ search_parameters_list_by_subreddit_name = {
     'careerguidance': career_subreddit_search_parameters_list,
 }
 
-# according to https://github.com/reddit-archive/reddit/wiki/API we shouldn't call the API more than 60 times a minute
-# so waiting 1.1 seconds between API calls should be safe
-seconds_to_wait_between_api_calls = 1.1
-
 def create_bot():
     return praw.Reddit('meaningful-cs-bot')
 
@@ -150,7 +146,6 @@ def search_subreddit(metrics_file, subreddit_name: str, search_parameters: Searc
         # Sometimes I hide a submission in my Saved list, but don't unsave it. I could iterate through my Saved list and find all that are hidden and hide them. A quicker fix for now is to unsave them here.
         if submission.saved and submission.hidden:
             submission.unsave()
-            time.sleep(seconds_to_wait_between_api_calls)
         
         # only add submissions that haven't been archived,
         # because if they are archived can no longer comment on them anyways.
@@ -164,7 +159,6 @@ def search_subreddit(metrics_file, subreddit_name: str, search_parameters: Searc
             # if the submission is older than a certain time period, I'm not saving it. The reason for this behavior is that my Saved list on Reddit can't be sorted by date, and commenting on old submissions is less effective than commenting on new ones.
             if submission.created_utc > time.time() - SECONDS_IN_A_MONTH and not submission.saved:
                 submission.save(category='ea')
-                time.sleep(seconds_to_wait_between_api_calls)
 
             submissions.append(submission)
             # add the permalinks to the log, so we know from which SearchParameter each permalink originated
@@ -193,7 +187,6 @@ def search(metrics_file, search_parameters_list_by_subreddit):
         if not submission.archived and not submission.hidden and not submission.link_flair_text == 'Job advert':
             nonprofit_jobs_submissions.append(submission)
     search_results.append(SearchResult('Nonprofit_Jobs', None, nonprofit_jobs_submissions))
-    time.sleep(seconds_to_wait_between_api_calls)
 
     log = ''
     for subreddit_name, search_parameters_list in search_parameters_list_by_subreddit.items():
@@ -202,7 +195,6 @@ def search(metrics_file, search_parameters_list_by_subreddit):
             (l, search_result.submissions) = search_subreddit(metrics_file, subreddit_name, search_parameters)
             log += l
             search_results.append(search_result)
-            time.sleep(seconds_to_wait_between_api_calls)
 
     return (log, search_results)
 

@@ -20,12 +20,8 @@ class SearchResult:
         self.submissions = submissions
 
 # the exclusions_list contains strings that aren't allowed in the permalink of posts
-# for instance /r/COMMCoin contains a bunch of junk I don't want to respond to, so I filter it out.
 exclusions_list = [
-        'r/COMMCoin',
         'u_ayaankKhan562',
-        '/r/chanceme',
-        'r/redditserials',
 ]
 
 common_search_parameters_list = [
@@ -58,7 +54,7 @@ career_subreddit_search_parameters_list = [
 # If you include multiple 'title:' terms in a SearchParameters, only one of them actually needs to be in the title for the submission (aka post) to match.
 # For instance if you have SearchParameters("title:meaningful title:career"), then either "meaningful" or "career" needs to be in the title for reddit to return it. The other term can be in the submission body.
 search_parameters_list_by_subreddit_name = {
-    'all': [
+    'all-chanceme-redditserials-COMMCoin': [
             SearchParameters('"charity navigators"'),
             SearchParameters("title:meaningful title:career"),
             SearchParameters("title:meaningful title:job"),
@@ -143,7 +139,7 @@ def search_subreddit(metrics_file, subreddit_name: str, search_parameters: Searc
     upvoted_count = 0
     for submission in submissions_iterable:
 
-        # Sometimes I hide a submission in my Saved list, but don't unsave it. I could iterate through my Saved list and find all that are hidden and hide them. A quicker fix for now is to unsave them here.
+        # Sometimes I hide a submission in my Saved list, but don't unsave it. I could iterate through my Saved list and find all that are hidden and hide them. A quicker fix for now is to unsave them as I look them up.
         if submission.saved and submission.hidden:
             submission.unsave()
         

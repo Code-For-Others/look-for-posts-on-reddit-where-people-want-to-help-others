@@ -994,7 +994,12 @@
         "usefulness": "MISS"
     },
     "/r/AskSF/comments/10dekfi/places_to_donate_plasma_for_money/": {
-        "usefulness": "MISS"
+        "usefulness": "MISS",
+        "subreddit_name": "all-chanceme-redditserials-COMMCoin",
+        "search_parameters": {
+            "query": "title:donate title:money",
+            "sort": "new"
+        }
     },
     "/r/GothamKnights/comments/10ddoz1/belfry_side_stories/": {
         "usefulness": "MISS"

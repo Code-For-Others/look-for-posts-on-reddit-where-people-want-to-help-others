@@ -183,10 +183,12 @@ def search(search_parameters_list_by_subreddit):
         history = json.load(storage_file)
 
     #TODO don't have two separate search_results. See the other TODO  in this file for more context.
+    #TODO maybe handle race conditions. if the file is written by multiple iterations of this program at once, that would be bad. maybe instead of using cron, just run the python program in the background all the time.
     if do_stuff(search_results, history) or do_stuff(hidden_search_results, history):
         with open('storage.json', 'w') as storage_file:
             replacement_json = json.dumps(history, default=vars, indent=4)
             storage_file.write(replacement_json)
+        os.system('git add . && git commit -m "automatically committing storage.json file"; git push origin main')
 
     return search_results
 

@@ -197,13 +197,21 @@ def do_stuff(search_results, history):
     for search_result in search_results:
         for submission in search_result.submissions:
             if submission.hidden:
+
+                subreddit_name_local = ''
+                # I have some subreddits removed from the 'all' subreddit, but I want to just save it as 'all' for metrics purposes
+                if 'all' == search_result.subreddit_name[:3]:
+                    subreddit_name_local = 'all'
+                else:
+                    subreddit_name_local = search_result.subreddit_name
+
                 # I do like submissions besides EA submissions found through this bot on this account, so I only count the submissions which
                 # I liked AND hide as 'hits'. I don't hide submissions on this account unless I found them through this bot. I hide every submission
                 # which I find through this bot, so I can analyze which are the most effective searches later.
                 if submission.likes == True:
-                    history[submission.permalink] = Post('HIT', subreddit_name = search_result.subreddit_name, search_parameters = search_result.search_parameters)
+                    history[submission.permalink] = Post('HIT', subreddit_name = subreddit_name_local, search_parameters = search_result.search_parameters)
                 else:
-                    history[submission.permalink] = Post('MISS', subreddit_name = search_result.subreddit_name, search_parameters = search_result.search_parameters)
+                    history[submission.permalink] = Post('MISS', subreddit_name = subreddit_name_local, search_parameters = search_result.search_parameters)
                 something_changed = True
     return something_changed
 

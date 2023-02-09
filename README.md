@@ -2,7 +2,7 @@
 
 This is a personal project to find posts on Reddit that are from people seeking advice on finding a meaningful career or more effective charity.
 
-A lot of this is really rough draft stuff since I'm just using it mostly for myself.
+This code is in rough draft mode because it's a pet project which only I'm using.
 
 If you're interested in reaching out to people on reddit about how they can be more impactful or live more meaningful lives (maybe you're really into pandemic prevention, for instance, and want to scan reddit for posts about pandemic prevention to share info with others) then please reach out to me at maxwell.pietsch@gmail.com and I can set this reddit bot up to send you new posts or you can help me to figure out better ways to answer posts myself.
 

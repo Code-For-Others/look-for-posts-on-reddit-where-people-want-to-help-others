@@ -3828,5 +3828,13 @@
             "query": "\"help people\"",
             "sort": "new"
         }
+    },
+    "/r/findapath/comments/10yi7qh/held_back_by_my_fears_for_the_future_i_am/": {
+        "usefulness": "MISS",
+        "subreddit_name": "findapath",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
     }
 }

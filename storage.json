@@ -3996,5 +3996,13 @@
             "query": "title:donate title:money",
             "sort": "new"
         }
+    },
+    "/r/islam/comments/10yrex4/will_i_still_get_good_deeds_if_i_donate_to/": {
+        "usefulness": "HIT",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "title:donate title:money",
+            "sort": "new"
+        }
     }
 }

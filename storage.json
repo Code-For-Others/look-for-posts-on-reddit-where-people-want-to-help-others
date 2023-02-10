@@ -3964,5 +3964,13 @@
             "query": "\"help people\"",
             "sort": "new"
         }
+    },
+    "/r/mentalhealth/comments/10xwwtv/mental_health_charities_for_my_will/": {
+        "usefulness": "HIT",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity recommendations",
+            "sort": "new"
+        }
     }
 }

@@ -3836,5 +3836,133 @@
             "query": "\"help people\"",
             "sort": "new"
         }
+    },
+    "/r/namenerds/comments/10y8ydv/name_suggestions_from_1908_newspaper_contest/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity suggestions",
+            "sort": "new"
+        }
+    },
+    "/r/antiwork/comments/10y9jgq/bait_and_switch_job_fired_me/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity recommendations",
+            "sort": "new"
+        }
+    },
+    "/r/mylittlepony/comments/10y5jjx/deleted_brony_videos_archive_wubcake_saberspark/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity recommendations",
+            "sort": "new"
+        }
+    },
+    "/r/singing/comments/10y5e3f/decent_karaoke_track_for_i_will_always_love_you/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity recommendations",
+            "sort": "new"
+        }
+    },
+    "/r/Ultramarathon/comments/10xyro3/first_100km_road_race_shoe_selection/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity recommendations",
+            "sort": "new"
+        }
+    },
+    "/r/HomeDepot/comments/10y8vaf/my_small_nonprofit_organization_is_building_a/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "title:donate title:money",
+            "sort": "new"
+        }
+    },
+    "/r/COMMCoin/comments/10xyb3r/ever_wonder_what_happens_to_the_money_you_donate/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "title:donate title:money",
+            "sort": "new"
+        }
+    },
+    "/r/libertarianunity/comments/10xxk6l/please_do_not_donate_your_money_to_the_rage/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "title:donate title:money",
+            "sort": "new"
+        }
+    },
+    "/r/LibertarianUncensored/comments/10xxjc3/please_do_not_donate_your_money_to_the_rage/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "title:donate title:money",
+            "sort": "new"
+        }
+    },
+    "/r/IronFrontUSA/comments/10xxild/please_do_not_donate_your_money_to_the_rage/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "title:donate title:money",
+            "sort": "new"
+        }
+    },
+    "/r/antiwar/comments/10xxbzh/please_do_not_donate_your_money_to_the_rage/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "title:donate title:money",
+            "sort": "new"
+        }
+    },
+    "/r/careerguidance/comments/10yf3t9/pragmatism_vs_passion_the_battle_between_head_and/": {
+        "usefulness": "HIT",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
+    },
+    "/r/careerguidance/comments/10y4j3h/i_have_a_bachelors_degree_in_criminal_justice_but/": {
+        "usefulness": "MISS",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
+    },
+    "/r/vegan/comments/10y01pv/developer_needed_help_with_automation_job_board/": {
+        "usefulness": "MISS",
+        "subreddit_name": "vegan",
+        "search_parameters": {
+            "query": "title:job",
+            "sort": "new"
+        }
+    },
+    "/r/vegan/comments/10xzu5o/developer_needed_help_with_automation_job_board/": {
+        "usefulness": "MISS",
+        "subreddit_name": "vegan",
+        "search_parameters": {
+            "query": "title:job",
+            "sort": "new"
+        }
+    },
+    "/r/findapath/comments/10yaoak/feel_utterly_lost_and_without_purpose_desperately/": {
+        "usefulness": "MISS",
+        "subreddit_name": "findapath",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
     }
 }

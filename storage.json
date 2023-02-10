@@ -3972,5 +3972,29 @@
             "query": "charity recommendations",
             "sort": "new"
         }
+    },
+    "/r/u_Efficient_Creme_1556/comments/10ywrzd/what_is_the_most_unique_item_youve_ever_donated/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "title:choose title:charity",
+            "sort": "new"
+        }
+    },
+    "/r/london/comments/10yveak/london_venues_to_host_a_charity_5_aside_football/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity suggestions",
+            "sort": "new"
+        }
+    },
+    "/r/COMMCoin/comments/10yvlpz/ever_wonder_what_happens_to_the_money_you_donate/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "title:donate title:money",
+            "sort": "new"
+        }
     }
 }

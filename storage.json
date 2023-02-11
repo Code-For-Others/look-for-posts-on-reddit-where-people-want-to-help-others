@@ -1444,9 +1444,9 @@
     },
     "/r/findapath/comments/104asrv/job_for_someone_torn_between_meaningful_social/": {
         "usefulness": "HIT",
-        "subreddit_name": "all",
+        "subreddit_name": "findapath",
         "search_parameters": {
-            "query": "title:meaningful title:job",
+            "query": "\"help people\"",
             "sort": "new"
         }
     },
@@ -3001,9 +3001,9 @@
     },
     "/r/personalfinance/comments/z9n98a/30day_challenge_12_get_involved_with_charity/": {
         "usefulness": "HIT",
-        "subreddit_name": "all",
+        "subreddit_name": "personalfinance",
         "search_parameters": {
-            "query": "\"charity navigators\"",
+            "query": "title:charity",
             "sort": "new"
         }
     },
@@ -3327,9 +3327,9 @@
     },
     "/r/findapath/comments/f8m41y/to_those_who_chose_paths_that_were_altruistic/": {
         "usefulness": "MISS",
-        "subreddit_name": "all",
+        "subreddit_name": "findapath",
         "search_parameters": {
-            "query": "title:altruistic title:career",
+            "query": "altruistic",
             "sort": "new"
         }
     },
@@ -3473,9 +3473,9 @@
     },
     "/r/careerguidance/comments/lm3dsp/altruistic_career_options_for_someone_feeling/": {
         "usefulness": "HIT",
-        "subreddit_name": "all",
+        "subreddit_name": "careerguidance",
         "search_parameters": {
-            "query": "title:altruistic title:career",
+            "query": "altruistic",
             "sort": "new"
         }
     },

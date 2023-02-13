@@ -4004,5 +4004,13 @@
             "query": "title:donate title:money",
             "sort": "new"
         }
+    },
+    "/r/COMMCoin/comments/111cmf9/ever_wonder_what_happens_to_the_money_you_donate/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "title:donate title:money",
+            "sort": "new"
+        }
     }
 }

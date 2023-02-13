@@ -4012,5 +4012,109 @@
             "query": "title:donate title:money",
             "sort": "new"
         }
+    },
+    "/r/findapath/comments/110zu1q/im_too_scared_to_find_a_meaningful_career_i_just/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "title:meaningful title:job",
+            "sort": "new"
+        }
+    },
+    "/r/keffals/comments/111izep/at_6pm_cst7pm_est_tonight_junlper_from_twitter/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "title:best title:charity",
+            "sort": "new"
+        }
+    },
+    "/r/u_Whydonate_Platform/comments/1115dwo/10_best_corporate_fundraising_ideas_for_charity/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "title:best title:charity",
+            "sort": "new"
+        }
+    },
+    "/r/hogwartslegacyJKR/comments/111kyfw/director_of_policy_at_jewish_charity_the/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "title:trust title:charity",
+            "sort": "new"
+        }
+    },
+    "/r/u_Cautious-Comment-440/comments/111dl52/what_is_the_most_unique_item_youve_ever_donated/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "title:choose title:charity",
+            "sort": "new"
+        }
+    },
+    "/r/JackSucksAtLife/comments/111kp20/i_found_the_2022_gwr_in_my_school/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity suggestions",
+            "sort": "new"
+        }
+    },
+    "/r/DissociaDID/comments/111ixpl/what_dds_platform_could_look_like_as_a_healthy/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity suggestions",
+            "sort": "new"
+        }
+    },
+    "/r/relationships_advice/comments/1118hz1/is_this_man_a_player_or_is_he_genuinely_into_me/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity suggestions",
+            "sort": "new"
+        }
+    },
+    "/r/whatsthisplant/comments/110k84p/whats_this_flower/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity suggestions",
+            "sort": "new"
+        }
+    },
+    "/r/Goodwill_Finds/comments/1116oyv/went_looking/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity recommendations",
+            "sort": "new"
+        }
+    },
+    "/r/freeshopmart/comments/111isa1/donate_money_gold_and_palesi/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "title:donate title:money",
+            "sort": "new"
+        }
+    },
+    "/r/careerguidance/comments/111ivma/what_should_i_19f_do_in_life_when_it_seems_my/": {
+        "usefulness": "HIT",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
+    },
+    "/r/careerguidance/comments/1119bda/what_careers_are_ptsd_friendly/": {
+        "usefulness": "MISS",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
     }
 }

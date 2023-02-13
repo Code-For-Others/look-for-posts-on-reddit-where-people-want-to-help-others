@@ -4116,5 +4116,45 @@
             "query": "\"help people\"",
             "sort": "new"
         }
+    },
+    "/r/ukraine/comments/110b02s/best_uk_charity_to_donate_to/": {
+        "usefulness": "HIT",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity recommendations",
+            "sort": "new"
+        }
+    },
+    "/r/streaming/comments/11161p8/i_want_to_get_into_streaming_what_are_the/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity suggestions",
+            "sort": "new"
+        }
+    },
+    "/r/brooksbrothers/comments/110t4ks/looking_for_good_websites_for_vintage_brooks/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity suggestions",
+            "sort": "new"
+        }
+    },
+    "/r/COMMCoin/comments/110j1f7/ever_wonder_what_happens_to_the_money_you_donate/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "title:donate title:money",
+            "sort": "new"
+        }
+    },
+    "/r/careerguidance/comments/1110esc/wanting_to_make_a_career_change_where_do_i_go/": {
+        "usefulness": "HIT",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"help others\"",
+            "sort": "new"
+        }
     }
 }

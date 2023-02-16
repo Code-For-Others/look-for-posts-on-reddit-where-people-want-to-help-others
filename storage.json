@@ -4220,5 +4220,21 @@
             "query": "\"help people\"",
             "sort": "new"
         }
+    },
+    "/r/lgbt/comments/111exxm/lgbt_charities/": {
+        "usefulness": "HIT",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity suggestions",
+            "sort": "new"
+        }
+    },
+    "/r/findapath/comments/111oe3l/computer_science_vs_psychology/": {
+        "usefulness": "HIT",
+        "subreddit_name": "findapath",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
     }
 }

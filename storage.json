@@ -4172,5 +4172,37 @@
             "query": "title:donate title:money",
             "sort": "new"
         }
+    },
+    "/r/delhi/comments/1134kc0/any_volunteer_work_at_ngos/": {
+        "usefulness": "HIT",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "\"animal rights\" title:work",
+            "sort": "new"
+        }
+    },
+    "/r/careerguidance/comments/1133i03/career_options_for_someone_trying_to_get_out_of/": {
+        "usefulness": "MISS",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"help others\"",
+            "sort": "new"
+        }
+    },
+    "/r/careerguidance/comments/113es8z/should_i_become_a_sonographer/": {
+        "usefulness": "HIT",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
+    },
+    "/r/careerguidance/comments/113a6yn/what_is_advice_youd_give_someone_looking_for/": {
+        "usefulness": "HIT",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
     }
 }

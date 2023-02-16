@@ -4156,5 +4156,21 @@
             "query": "\"help others\"",
             "sort": "new"
         }
+    },
+    "/r/RebelChristianity/comments/113e50v/a_christian_in_the_middle_of_rebellious_students/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity suggestions",
+            "sort": "new"
+        }
+    },
+    "/r/climate/comments/113fl5t/where_is_an_effective_place_i_can_donate_my_money/": {
+        "usefulness": "HIT",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "title:donate title:money",
+            "sort": "new"
+        }
     }
 }

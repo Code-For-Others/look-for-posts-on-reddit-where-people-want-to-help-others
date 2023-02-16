@@ -4236,5 +4236,13 @@
             "query": "\"help people\"",
             "sort": "new"
         }
+    },
+    "/r/careerguidance/comments/110xth7/nursing_school_or_masters_in_education/": {
+        "usefulness": "HIT",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
     }
 }

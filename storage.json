@@ -4204,5 +4204,21 @@
             "query": "\"help people\"",
             "sort": "new"
         }
+    },
+    "/r/AskReddit/comments/112rwf2/has_anybody_changed_careers_you_were_passionate/": {
+        "usefulness": "HIT",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "title:meaningful title:job",
+            "sort": "new"
+        }
+    },
+    "/r/careerguidance/comments/111uq63/jobs_that_help_people_find_careersbetter_their/": {
+        "usefulness": "HIT",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
     }
 }

@@ -4244,5 +4244,13 @@
             "query": "\"help people\"",
             "sort": "new"
         }
+    },
+    "/r/india/comments/115lo08/going_through_an_existential_crisis_and_wanting/": {
+        "usefulness": "HIT",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity suggestions",
+            "sort": "new"
+        }
     }
 }

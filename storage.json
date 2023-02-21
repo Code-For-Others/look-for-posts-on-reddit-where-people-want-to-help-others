@@ -4252,5 +4252,37 @@
             "query": "charity suggestions",
             "sort": "new"
         }
+    },
+    "/r/msu/comments/117m5v2/advice/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity recommendations",
+            "sort": "new"
+        }
+    },
+    "/r/careerguidance/comments/117pxxe/majoring_in_biology_idea_of_becoming_a_teacher/": {
+        "usefulness": "MISS",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"help others\"",
+            "sort": "new"
+        }
+    },
+    "/r/careerguidance/comments/117kikr/lost_as_a_math_graduate_which_path_should_i_choose/": {
+        "usefulness": "MISS",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"machine learning\"",
+            "sort": "new"
+        }
+    },
+    "/r/findapath/comments/1170gf1/indecisive_and_desperate_for_career_advice_19f/": {
+        "usefulness": "MISS",
+        "subreddit_name": "findapath",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
     }
 }

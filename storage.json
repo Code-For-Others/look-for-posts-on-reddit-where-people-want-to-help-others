@@ -4300,5 +4300,21 @@
             "query": "\"help people\"",
             "sort": "new"
         }
+    },
+    "/r/asktransgender/comments/115m31e/ethical_question_re_donations_to_a_clinic/": {
+        "usefulness": "HIT",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity suggestions",
+            "sort": "new"
+        }
+    },
+    "/r/careerguidance/comments/1158lzd/i_feel_stuck_in_my_job_how_do_i_change_careers/": {
+        "usefulness": "MISS",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"help others\"",
+            "sort": "new"
+        }
     }
 }

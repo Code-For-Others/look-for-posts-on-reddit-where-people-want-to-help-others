@@ -4284,5 +4284,21 @@
             "query": "\"help people\"",
             "sort": "new"
         }
+    },
+    "/r/DOG/comments/1163al6/whats_the_best_dog_charity_to_donate_to_when_we/": {
+        "usefulness": "HIT",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "title:best title:charity",
+            "sort": "new"
+        }
+    },
+    "/r/careerguidance/comments/116q46d/where_to_use_computer_engineering_degree/": {
+        "usefulness": "HIT",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
     }
 }

@@ -3327,9 +3327,9 @@
     },
     "/r/findapath/comments/f8m41y/to_those_who_chose_paths_that_were_altruistic/": {
         "usefulness": "MISS",
-        "subreddit_name": "findapath",
+        "subreddit_name": "all",
         "search_parameters": {
-            "query": "altruistic",
+            "query": "title:altruistic title:career",
             "sort": "new"
         }
     },

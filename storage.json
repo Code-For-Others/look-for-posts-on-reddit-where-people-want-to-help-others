@@ -4332,5 +4332,13 @@
             "query": "\"help people\"",
             "sort": "new"
         }
+    },
+    "/r/newzealand/comments/118or84/suggestions_for_good_nz_environmental_charities/": {
+        "usefulness": "HIT",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity suggestions",
+            "sort": "new"
+        }
     }
 }

@@ -4324,5 +4324,13 @@
             "query": "charity recommendations",
             "sort": "new"
         }
+    },
+    "/r/careerguidance/comments/118atme/im_a_highschool_graduate_who_loves_science_and_am/": {
+        "usefulness": "HIT",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
     }
 }

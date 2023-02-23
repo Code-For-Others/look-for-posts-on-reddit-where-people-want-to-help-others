@@ -4316,5 +4316,13 @@
             "query": "\"help others\"",
             "sort": "new"
         }
+    },
+    "/r/transgenderUK/comments/1180v1p/good_trans_charities/": {
+        "usefulness": "HIT",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity recommendations",
+            "sort": "new"
+        }
     }
 }

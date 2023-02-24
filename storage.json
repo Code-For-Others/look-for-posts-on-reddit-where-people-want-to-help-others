@@ -4121,7 +4121,7 @@
         "usefulness": "HIT",
         "subreddit_name": "all",
         "search_parameters": {
-            "query": "charity recommendations",
+            "query": "title:best title:charity",
             "sort": "new"
         }
     },

@@ -4340,5 +4340,13 @@
             "query": "charity suggestions",
             "sort": "new"
         }
+    },
+    "/r/careerguidance/comments/11bx260/it_is_that_time_of_life_i_want_to_start_doing/": {
+        "usefulness": "HIT",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"machine learning\"",
+            "sort": "new"
+        }
     }
 }

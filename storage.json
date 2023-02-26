@@ -4364,5 +4364,13 @@
             "query": "\"machine learning\"",
             "sort": "new"
         }
+    },
+    "/r/findapath/comments/11c01zu/finance_or_pt/": {
+        "usefulness": "MISS",
+        "subreddit_name": "findapath",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
     }
 }

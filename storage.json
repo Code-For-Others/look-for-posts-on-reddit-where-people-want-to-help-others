@@ -4372,5 +4372,21 @@
             "query": "\"help people\"",
             "sort": "new"
         }
+    },
+    "/r/careerguidance/comments/11d0vpg/what_should_i_do_with_my_life_career/": {
+        "usefulness": "MISS",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"machine learning\"",
+            "sort": "new"
+        }
+    },
+    "/r/careerguidance/comments/11cz67v/web_developer_looking_to_transition_to_digital/": {
+        "usefulness": "MISS",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"machine learning\"",
+            "sort": "new"
+        }
     }
 }

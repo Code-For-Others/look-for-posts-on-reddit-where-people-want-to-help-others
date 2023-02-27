@@ -487,7 +487,7 @@
         "usefulness": "MISS",
         "subreddit_name": "findapath",
         "search_parameters": {
-            "query": "\"help people\"",
+            "query": "\"help others\"",
             "sort": "new"
         }
     },
@@ -1444,9 +1444,9 @@
     },
     "/r/findapath/comments/104asrv/job_for_someone_torn_between_meaningful_social/": {
         "usefulness": "HIT",
-        "subreddit_name": "findapath",
+        "subreddit_name": "all",
         "search_parameters": {
-            "query": "\"help people\"",
+            "query": "title:meaningful title:job",
             "sort": "new"
         }
     },
@@ -1782,7 +1782,7 @@
         "usefulness": "MISS",
         "subreddit_name": "findapath",
         "search_parameters": {
-            "query": "\"help people\"",
+            "query": "\"help others\"",
             "sort": "new"
         }
     },

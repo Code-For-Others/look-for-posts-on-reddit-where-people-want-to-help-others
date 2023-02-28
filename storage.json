@@ -4396,5 +4396,13 @@
             "query": "title:best title:charity",
             "sort": "new"
         }
+    },
+    "/r/gravelcycling/comments/11ed2k9/where_to_put_money_into_next/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity suggestions",
+            "sort": "new"
+        }
     }
 }

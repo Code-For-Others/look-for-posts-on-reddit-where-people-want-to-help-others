@@ -4388,5 +4388,13 @@
             "query": "\"machine learning\"",
             "sort": "new"
         }
+    },
+    "/r/homeless/comments/11dcwml/best_charity_organisations_projects_for/": {
+        "usefulness": "HIT",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "title:best title:charity",
+            "sort": "new"
+        }
     }
 }

@@ -4404,5 +4404,45 @@
             "query": "charity suggestions",
             "sort": "new"
         }
+    },
+    "/r/cocktails/comments/11fn8ne/pink_cocktail_for_charity_event/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity suggestions",
+            "sort": "new"
+        }
+    },
+    "/r/relationship_advice/comments/11fm24q/husbands_m47_exwife_f47_keeps_trying_to_insert/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity suggestions",
+            "sort": "new"
+        }
+    },
+    "/r/starfinder_rpg/comments/11fkayl/which_plane_of_existence_do_you_think_lissala/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity suggestions",
+            "sort": "new"
+        }
+    },
+    "/r/GameTrade/comments/11cr3vw/h_games_humble_and_fanatical_steam_w_paypal/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity recommendations",
+            "sort": "new"
+        }
+    },
+    "/r/mentalillness/comments/11flfl9/how_to_get_help_when_youre_poorunemployed/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity recommendations",
+            "sort": "new"
+        }
     }
 }

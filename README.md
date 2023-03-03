@@ -68,3 +68,7 @@ I have cron run this daily by adding the following using `crontab -e` command,
 
 The `cd` command is in the crontab above because the praw.ini file is loaded from the current directory.  
 I also had to install postfix when using an EC2 instance in order for the email to work, with `sudo apt install postfix`. I selected the default options when the postfix installer prompted me, and that worked.
+
+### Generating requirements.txt
+
+Run `pip install pipreqs && pipreqs .` to generate the requirements.txt file for everything in the directory. See [this question for more info](https://stackoverflow.com/questions/31684375/automatically-create-requirements-txt).

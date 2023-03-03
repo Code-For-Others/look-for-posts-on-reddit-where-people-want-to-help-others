@@ -24,7 +24,7 @@ exclusions_list = [
 ]
 
 # local can be set to True so that you won't use Google Cloud features
-local = False
+local = True
 # only_vegan_subreddit can be set to True when testing so that the test doesn't iterate through every subreddit and therefore completes faster
 only_vegan_subreddit = False
 

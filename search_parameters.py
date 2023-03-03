@@ -66,6 +66,11 @@ search_parameters_list_by_subreddit_name = {
             SearchParameters('"animal rights" title:work'),
 
             SearchParameters("title:best title:charity"),
+            SearchParameters("where donate"),
+            SearchParameters("best donation"),
+            SearchParameters("choose donate"),
+            SearchParameters("choose donation"),
+            SearchParameters("pick donation"),
             SearchParameters("title:trust title:charity"),
             SearchParameters("title:pick title:charity"),
             SearchParameters("title:choose title:charity"),

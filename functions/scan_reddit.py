@@ -24,9 +24,9 @@ exclusions_list = [
 ]
 
 # local can be set to True so that you won't use Google Cloud features
-local = True
+local = False
 # only_vegan_subreddit can be set to True when testing so that the test doesn't iterate through every subreddit and therefore completes faster
-only_vegan_subreddit = True
+only_vegan_subreddit = False
 
 def access_secret_version(client, version_id):
     return client.access_secret_version(request={'name':version_id}).payload.data.decode('UTF-8')
@@ -104,8 +104,17 @@ def write_to_storage(local, permalinks):
         with blob.open("w") as f:
             f.write(permalinks)
 
-start_time = time.time()
-search_results = search(search_parameters_list_by_subreddit_name)
-permalinks = create_permalinks_string(search_results)
-write_to_storage(local, permalinks)
-print(os.path.basename(__file__) + " completed in %.2f seconds." % (time.time() - start_time))
+def scan_reddit(event, context):
+    """Triggered from a message on a Cloud Pub/Sub topic.
+    Args:
+         event (dict): Event payload.
+         context (google.cloud.functions.Context): Metadata for the event.
+    """
+    start_time = time.time()
+    search_results = search(search_parameters_list_by_subreddit_name)
+    permalinks = create_permalinks_string(search_results)
+    write_to_storage(local, permalinks)
+    print(os.path.basename(__file__) + " completed in %.2f seconds." % (time.time() - start_time))
+
+if local:
+    scan_reddit(None, None)

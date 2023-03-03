@@ -2430,7 +2430,7 @@
         "usefulness": "MISS",
         "subreddit_name": "personalfinance",
         "search_parameters": {
-            "query": "title:charity",
+            "query": "title:donate",
             "sort": "new"
         }
     },

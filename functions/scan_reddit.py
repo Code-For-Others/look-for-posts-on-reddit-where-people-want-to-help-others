@@ -23,9 +23,30 @@ exclusions_list = [
         'r/COMMCoin',
 ]
 
-r = praw.Reddit('meaningful-cs-bot')
+# local can be set to True so that you won't use Google Cloud features
+local = True
+# only_vegan_subreddit can be set to True when testing so that the test doesn't iterate through every subreddit and therefore completes faster
+only_vegan_subreddit = True
+
+def access_secret_version(client, version_id):
+    return client.access_secret_version(request={'name':version_id}).payload.data.decode('UTF-8')
+
+if local:
+    r = praw.Reddit('meaningful-cs-bot')
+else:
+    from google.cloud import secretmanager
+    client = secretmanager.SecretManagerServiceClient()
+    r = praw.Reddit(
+            client_id = access_secret_version(client, 'projects/868719180965/secrets/praw_client_id/versions/1'),
+            client_secret = access_secret_version(client, 'projects/868719180965/secrets/praw_client_secret/versions/1'),
+            password = access_secret_version(client, 'projects/868719180965/secrets/praw_password/versions/1'),
+            user_agent = access_secret_version(client, 'projects/868719180965/secrets/praw_user_agent/versions/1'),
+            username = access_secret_version(client, 'projects/868719180965/secrets/praw_username/versions/1')
+    )
 
 def search_subreddit(subreddit_name: str, search_parameters: SearchParameters):
+    if only_vegan_subreddit and subreddit_name != 'vegan':
+        return []
     subreddit: Subreddit = r.subreddit(subreddit_name)
     print('Searching /r/' + subreddit_name + ' for \'' + search_parameters.query + '\' with sort=' + str(search_parameters.sort))
     # 'submissions' refers to what you usually call reddit 'posts'. Praw uses the term 'submission' so I adopted it.
@@ -65,14 +86,26 @@ def create_permalinks_string(search_results: List[SearchResult]):
             if submission not in submissions:
                 if not contains_exclusion:
                     submissions.append(submission)
-    # Sort all the submissions, so it's easy for me to comment on the most recent ones. I think a non-trivial part of my impact with my comments is how quickly I comment. The quicker the better.
+    # Sort all the submissions, so it's easy for us to comment on the most recent ones. I think a non-trivial part of our impact with my comments is how quickly we comment. The quicker the better.
     submissions.sort(key=lambda submission: submission.created_utc, reverse=True)
     for submission in submissions:
         m += 'https://www.reddit.com' + submission.permalink + '\n'
     return m
 
+def write_to_storage(local, permalinks):
+    if local:
+        print('permalinks:\n' + permalinks)
+    else:
+        from google.cloud import storage
+        storage_client = storage.Client()
+        bucket = storage_client.bucket('latestpermalinks')
+        blob = bucket.blob('allpermalinks')
+        print('writing permalinks to latestpermalinks/allpermalinks in Cloud Storage')
+        with blob.open("w") as f:
+            f.write(permalinks)
 
 start_time = time.time()
 search_results = search(search_parameters_list_by_subreddit_name)
-create_permalinks_string(search_results)
+permalinks = create_permalinks_string(search_results)
+write_to_storage(local, permalinks)
 print(os.path.basename(__file__) + " completed in %.2f seconds." % (time.time() - start_time))

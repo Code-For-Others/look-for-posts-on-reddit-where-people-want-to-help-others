@@ -39,7 +39,7 @@ career_subreddit_search_parameters_list = [
 # If you include multiple 'title:' terms in a SearchParameters, only one of them actually needs to be in the title for the submission (aka post) to match.
 # For instance if you have SearchParameters("title:meaningful title:career"), then either "meaningful" or "career" needs to be in the title for reddit to return it. The other term can be in the submission body.
 search_parameters_list_by_subreddit_name = {
-    'all-chanceme-redditserials-COMMCoin': [
+    'all': [
             SearchParameters('"charity navigators"'),
             SearchParameters("title:meaningful title:career"),
             SearchParameters("title:meaningful title:job"),

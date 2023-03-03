@@ -4476,5 +4476,13 @@
             "query": "\"help people\"",
             "sort": "new"
         }
+    },
+    "/r/Healthygamergg/comments/11frq93/best_way_to_help_people/": {
+        "usefulness": "HIT",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity suggestions",
+            "sort": "new"
+        }
     }
 }

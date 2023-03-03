@@ -4468,5 +4468,13 @@
             "query": "\"help people\"",
             "sort": "new"
         }
+    },
+    "/r/careerguidance/comments/11fv49c/24m_looking_to_make_a_career_switch_shoud_i_leave/": {
+        "usefulness": "HIT",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
     }
 }

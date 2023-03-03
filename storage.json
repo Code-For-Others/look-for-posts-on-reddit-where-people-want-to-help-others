@@ -4460,5 +4460,13 @@
             "query": "\"machine learning\"",
             "sort": "new"
         }
+    },
+    "/r/findapath/comments/11ggfxe/24m_looking_to_make_a_career_switch_shoud_i_leave/": {
+        "usefulness": "HIT",
+        "subreddit_name": "findapath",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
     }
 }

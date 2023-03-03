@@ -4444,5 +4444,21 @@
             "query": "charity recommendations",
             "sort": "new"
         }
+    },
+    "/r/findapath/comments/11gme5b/working_a_dead_end_job_want_to_find_better_pay/": {
+        "usefulness": "HIT",
+        "subreddit_name": "findapath",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
+    },
+    "/r/careerguidance/comments/11glya5/which_job_should_i_take/": {
+        "usefulness": "MISS",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"machine learning\"",
+            "sort": "new"
+        }
     }
 }

@@ -3,7 +3,6 @@ from subprocess import call
 
 from datetime import datetime
 
-import json
 import praw
 import time
 from datetime import datetime
@@ -13,7 +12,6 @@ import pprint
 import os
 
 from search_result import SearchResult
-from post import Post
 from search_parameters import SearchParameters
 from search_parameters import search_parameters_list_by_subreddit_name
 
@@ -24,7 +22,7 @@ exclusions_list = [
 ]
 
 # local can be set to True so that you won't use Google Cloud features
-local = False
+local = True
 # only_vegan_subreddit can be set to True when testing so that the test doesn't iterate through every subreddit and therefore completes faster
 only_vegan_subreddit = False
 

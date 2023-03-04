@@ -66,11 +66,12 @@ search_parameters_list_by_subreddit_name = {
             SearchParameters('"animal rights" title:work'),
 
             SearchParameters("title:best title:charity"),
-            SearchParameters("where donate"),
-            SearchParameters("best donation"),
-            SearchParameters("choose donate"),
-            SearchParameters("choose donation"),
-            SearchParameters("pick donation"),
+            # Got a ton of false positives when we had the SearchParameters below which mention donating, so I'm commenting them out. How do we pick up posts like this one? https://old.reddit.com/r/cscareerquestions/comments/zzghe2/where_do_you_donate/
+            #SearchParameters("where donate"),
+            #SearchParameters("best donation"),
+            #SearchParameters("choose donate"),
+            #SearchParameters("choose donation"),
+            #SearchParameters("pick donation"),
             SearchParameters("title:trust title:charity"),
             SearchParameters("title:pick title:charity"),
             SearchParameters("title:choose title:charity"),

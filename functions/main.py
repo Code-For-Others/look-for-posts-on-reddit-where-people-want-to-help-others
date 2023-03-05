@@ -10,6 +10,8 @@ from praw.reddit import Subreddit
 from praw.reddit import Submission
 import pprint
 import os
+from google.cloud import storage
+from google.cloud import secretmanager
 
 from search_result import SearchResult
 from search_parameters import SearchParameters
@@ -32,7 +34,6 @@ def access_secret_version(client, version_id):
 if local:
     r = praw.Reddit('meaningful-cs-bot')
 else:
-    from google.cloud import secretmanager
     client = secretmanager.SecretManagerServiceClient()
     r = praw.Reddit(
             client_id = access_secret_version(client, 'projects/868719180965/secrets/praw_client_id/versions/1'),
@@ -94,7 +95,6 @@ def write_to_storage(local, permalinks):
     if local:
         print('permalinks:\n' + permalinks)
     else:
-        from google.cloud import storage
         storage_client = storage.Client()
         bucket = storage_client.bucket('latestpermalinks')
         blob = bucket.blob('allpermalinks')
@@ -114,5 +114,3 @@ def scan_reddit(event, context):
     write_to_storage(local, permalinks)
     print(os.path.basename(__file__) + " completed in %.2f seconds." % (time.time() - start_time))
 
-if local:
-    scan_reddit(None, None)

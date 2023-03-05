@@ -72,3 +72,16 @@ I also had to install postfix when using an EC2 instance in order for the email 
 ### Generating requirements.txt
 
 Run `pip install pipreqs && pipreqs .` to generate the requirements.txt file for everything in the directory. See [this question for more info](https://stackoverflow.com/questions/31684375/automatically-create-requirements-txt).
+
+### Testing on your local machine (aka not testing in Google Cloud)
+
+First make sure dependencies are installed using `pip install --upgrade google-cloud-storage` and `pip install --upgrade google-cloud-secret-manager` and `pip install functions-framework`. Then run `cd ./functions` and `functions-framework --target=scan_reddit --signature-type=event`. Now in a separate terminal, change into the same `functions` directory, and run this command:
+```
+curl localhost:8080 -X POST  -H "Content-Type: application/json" -d '{
+        "context": {
+        },
+        "data": {
+        }
+      }'
+```
+If you go back to the terminal where you first ran `functions-framework` you should see the results. More info available at the GCP docs [here](https://cloud.google.com/functions/docs/running/function-frameworks).

@@ -4492,5 +4492,53 @@
             "query": "title:donate title:money",
             "sort": "new"
         }
+    },
+    "/r/careerguidance/comments/11pjlv9/should_i_pursue_hr_or_ux/": {
+        "usefulness": "MISS",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
+    },
+    "/r/careerguidance/comments/11mk1rl/to_law_school_or_not/": {
+        "usefulness": "HIT",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
+    },
+    "/r/careerguidance/comments/11lij9v/computer_science_or_business_degree/": {
+        "usefulness": "MISS",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"machine learning\"",
+            "sort": "new"
+        }
+    },
+    "/r/careerguidance/comments/11jyx9w/should_i_move_towards_businessforward_pharma/": {
+        "usefulness": "MISS",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"machine learning\"",
+            "sort": "new"
+        }
+    },
+    "/r/findapath/comments/11o86go/28f_canadian_leaving_my_city_and_job_to_live_in_a/": {
+        "usefulness": "MISS",
+        "subreddit_name": "findapath",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
+    },
+    "/r/findapath/comments/11hl5fn/im_in_med_school_but_ive_always_hated_studying/": {
+        "usefulness": "HIT",
+        "subreddit_name": "findapath",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
     }
 }

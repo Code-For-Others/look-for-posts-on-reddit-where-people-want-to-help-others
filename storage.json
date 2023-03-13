@@ -4540,5 +4540,13 @@
             "query": "\"help people\"",
             "sort": "new"
         }
+    },
+    "/r/findapath/comments/11mscio/24f_about_to_graduate_with_masters_and_scared/": {
+        "usefulness": "HIT",
+        "subreddit_name": "findapath",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
     }
 }

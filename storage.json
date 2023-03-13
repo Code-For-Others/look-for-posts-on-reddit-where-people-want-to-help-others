@@ -4484,5 +4484,13 @@
             "query": "charity suggestions",
             "sort": "new"
         }
+    },
+    "/r/Environmentalism/comments/11mfta7/what_is_the_most_effective_organization_to_donate/": {
+        "usefulness": "HIT",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "title:donate title:money",
+            "sort": "new"
+        }
     }
 }

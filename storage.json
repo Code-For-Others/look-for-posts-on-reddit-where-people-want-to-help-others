@@ -4548,5 +4548,13 @@
             "query": "\"help people\"",
             "sort": "new"
         }
+    },
+    "/r/careerguidance/comments/11rw9aa/what_to_do_when_not_being_passionate_about/": {
+        "usefulness": "HIT",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
     }
 }

@@ -1444,9 +1444,9 @@
     },
     "/r/findapath/comments/104asrv/job_for_someone_torn_between_meaningful_social/": {
         "usefulness": "HIT",
-        "subreddit_name": "all",
+        "subreddit_name": "findapath",
         "search_parameters": {
-            "query": "title:meaningful title:job",
+            "query": "\"help people\"",
             "sort": "new"
         }
     },
@@ -2866,7 +2866,7 @@
         "usefulness": "HIT",
         "subreddit_name": "cscareerquestions",
         "search_parameters": {
-            "query": "altruistic",
+            "query": "altruist",
             "sort": "new"
         }
     },
@@ -2971,9 +2971,9 @@
     },
     "/r/personalfinance/comments/z8uoid/donating_to_charity_best_ways/": {
         "usefulness": "HIT",
-        "subreddit_name": "all",
+        "subreddit_name": "personalfinance",
         "search_parameters": {
-            "query": "title:best title:charity",
+            "query": "title:charity",
             "sort": "new"
         }
     },
@@ -3001,9 +3001,9 @@
     },
     "/r/personalfinance/comments/z9n98a/30day_challenge_12_get_involved_with_charity/": {
         "usefulness": "HIT",
-        "subreddit_name": "all",
+        "subreddit_name": "personalfinance",
         "search_parameters": {
-            "query": "\"charity navigators\"",
+            "query": "title:charity",
             "sort": "new"
         }
     },
@@ -4447,9 +4447,9 @@
     },
     "/r/findapath/comments/11gme5b/working_a_dead_end_job_want_to_find_better_pay/": {
         "usefulness": "HIT",
-        "subreddit_name": "all",
+        "subreddit_name": "findapath",
         "search_parameters": {
-            "query": "title:meaningful title:job",
+            "query": "\"help people\"",
             "sort": "new"
         }
     },

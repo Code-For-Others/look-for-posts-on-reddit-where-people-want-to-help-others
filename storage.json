@@ -4572,5 +4572,29 @@
             "query": "\"help people\"",
             "sort": "new"
         }
+    },
+    "/r/UniUK/comments/11swvc3/oxford/": {
+        "usefulness": "MISS",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity suggestions",
+            "sort": "new"
+        }
+    },
+    "/r/Christianity/comments/11qvogx/christian_charities/": {
+        "usefulness": "HIT",
+        "subreddit_name": "all",
+        "search_parameters": {
+            "query": "charity recommendations",
+            "sort": "new"
+        }
+    },
+    "/r/careerguidance/comments/11szlbt/where_does_one_even_start_when_exploring_careers/": {
+        "usefulness": "HIT",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"help others\"",
+            "sort": "new"
+        }
     }
 }

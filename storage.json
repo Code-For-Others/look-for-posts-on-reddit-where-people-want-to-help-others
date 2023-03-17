@@ -4556,5 +4556,21 @@
             "query": "\"help people\"",
             "sort": "new"
         }
+    },
+    "/r/careerguidance/comments/11sict7/how_to_get_clarity_on_career_goals/": {
+        "usefulness": "MISS",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"help others\"",
+            "sort": "new"
+        }
+    },
+    "/r/careerguidance/comments/11sl7y2/how_do_we_figure_out_our_life_purpose_and_turn_it/": {
+        "usefulness": "HIT",
+        "subreddit_name": "careerguidance",
+        "search_parameters": {
+            "query": "\"help people\"",
+            "sort": "new"
+        }
     }
 }

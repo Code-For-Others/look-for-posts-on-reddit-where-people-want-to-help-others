@@ -79,6 +79,9 @@ search_parameters_list_by_subreddit_name = {
             SearchParameters("title:scam title:charity"),
             SearchParameters("charity suggestions"),
             SearchParameters("charity recommendations"),
+            SearchParameters("charities recommendations"),
+            SearchParameters("best charities"),
+            SearchParameters("charity favorite"),
 
             SearchParameters("title:donate title:money"),
         ],

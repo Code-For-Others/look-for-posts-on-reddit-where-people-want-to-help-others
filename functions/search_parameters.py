@@ -28,6 +28,9 @@ career_subreddit_search_parameters_list = [
     # also search parameters like "doctor", "medical school", "software engineer", etc. all turn up at least some relevant posts, but
     # the hit / miss ratio might keep you from working on other stuff b/c you have to sort through all the junk to find them.
     #SearchParameters('"social impact"')
+    
+    # Here is an example of why we're searching for the following https://old.reddit.com/r/findapath/comments/11uz7t7/transition_from_teaching_to_cybersecurity_or_ai/
+    SearchParameters('80,000 Hours'),
 
     SearchParameters('"help animals"'),
     SearchParameters('"make a difference"'),
@@ -82,6 +85,7 @@ search_parameters_list_by_subreddit_name = {
             SearchParameters("charities recommendations"),
             SearchParameters("best charities"),
             SearchParameters("charity favorite"),
+        
 
             SearchParameters("title:donate title:money"),
         ],

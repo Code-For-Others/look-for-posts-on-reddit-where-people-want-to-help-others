@@ -85,3 +85,7 @@ curl localhost:8080 -X POST  -H "Content-Type: application/json" -d '{
       }'
 ```
 If you go back to the terminal where you first ran `functions-framework` you should see the results. More info available at the GCP docs [here](https://cloud.google.com/functions/docs/running/function-frameworks).
+
+## TODO
+
+- [ ] Probably just load everything from /r/philanthropy. First step is look there and see if it's all relevant, or what search terms to include.

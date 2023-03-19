@@ -88,4 +88,4 @@ If you go back to the terminal where you first ran `functions-framework` you sho
 
 ## TODO
 
-- [ ] Probably just load everything from /r/philanthropy. First step is look there and see if it's all relevant, or what search terms to include.
+- [ ] 
